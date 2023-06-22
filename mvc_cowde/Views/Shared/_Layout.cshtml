@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+
+    <title>Tela inicial</title>
+
+    
+</head>
+
+<body>
+
+
+
+    @RenderBody()
+
+
+    @RenderSection("Scripts", false);
+
+
+    @if (TempData["Sit_Footer"] != "falso")
+    {
+        <footer>
+            <div class="logo-icons">
+                <div class="icons">
+                    <a href="https://www.instagram.com/">
+                        <img class="iconsImg" src="~/img/instagram.png" alt="">
+                    </a>
+                    <a href="https://twitter.com/?lang=pt">
+                        <img class="iconsImg" src="~/img/twitter.png" alt="">
+                    </a>
+                    <a href="https://www.youtube.com/">
+                        <img class="iconsImg" src="~/img/youtube.png" alt="">
+                    </a>
+                </div>
+                <img class="logoFoot" src="~/img/logoCowde_ofc.png" alt="">
+            </div>
+            <div class="links">
+                <a asp-controller="Home" asp-action="SobreNos"> Sobre nós</a>
+                <a asp-controller="Home" asp-action="Editor"> Editor</a>
+            </div>
+            <p class="pFoot">©2023 - Copyright: Cowde.com</p>
+        </footer>
+    }
+</body>
+</html>

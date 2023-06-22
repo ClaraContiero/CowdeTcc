@@ -1,0 +1,122 @@
+/* Fontes importadas */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+/* Background */
+.nav-background {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+}
+
+.img-background1 {
+    width: 120vh;
+    position: relative;
+    z-index: 2;
+}
+
+.img-background2 {
+    width: 120vh;
+    position: relative;
+    z-index: 2;
+}
+
+.img-background3 {
+    width: 120vh;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* NavBar */
+.nav-bar {
+    background-color: #06002E;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    box-shadow: 1px 2px 30px 3px #060004;
+    z-index: 10;
+}
+
+.logo_nav {
+    width: 130px;
+    margin-right: 95vh;
+}
+
+.links-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    margin-right: 90px;
+}
+
+.text-nav {
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+    .text-nav:hover {
+        text-decoration: underline;
+        color: rgb(146, 242, 20);
+    }
+
+.elementos-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: -25px;
+    justify-content: center;
+}
+
+.but-entrar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -20px;
+    cursor: pointer
+}
+
+    .but-entrar:hover {
+        scale: 1.04;
+    }
+
+.but-amarelo {
+    width: 120px;
+    display: inline-block;
+    position: relative;
+}
+
+.text-but {
+    color: #06002E;
+    font-family: 'Press Start 2P', cursive;
+    text-decoration: none;
+    font-size: 14px;
+    padding-top: 16px;
+    position: absolute;
+}
+
+.nav-position {
+    position: relative;
+}
+
+
+/* Responsividade */
+@media screen and (min-width: 300px) and (max-width: 700px) {
+    .nav-bar {
+        display: none;
+    }
+
+    .nav-background {
+        display: flex;
+        position: absolute;
+        margin-top: 18%;
+    }
+   
+}
+       
+

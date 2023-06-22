@@ -1,0 +1,76 @@
+
+@{
+    ViewData["Title"] = "Editor";
+    <link rel="stylesheet" href="~/css/editor.css" />
+    <link rel="stylesheet" href="~/css/nav.css" />
+    <link rel="stylesheet" href="~/css/styleAula.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+}
+
+
+<!-- Background da navbar -->
+<div class="nav-background">
+    <img class="img-background1" src="~/img/background.png" alt="" />
+    <img class="img-background2" src="~/img/background.png" alt="" />
+    <img class="img-background3" src="~/img/background.png" alt="" />
+</div>
+
+<!-- NavBar -->
+<nav class="nav-bar">
+    <div class="elementos-nav">
+        <a asp-controller="Home" asp-action="Modulos">
+            <img class="logo_nav" src="~/img/logoCowde_ofc.png" alt="">
+        </a>
+
+        <div class="links-nav">
+            <a class="text-nav" asp-area="" asp-controller="Home" asp-action="Modulos">Modulos</a>
+        </div>
+        <div class="drop">
+            @{
+                string nome = ViewBag.Avatar;
+                string formato = "/img/avatares/" + nome;
+            }
+            <img class="perfil-img" src="@formato" alt="" />
+            <div class="drop-down_perfil">
+                <a class="text-drop" asp-area="" asp-controller="Home" asp-action="Perfil" id="link1">Perfil</a>
+                <a class="text-drop" asp-area="" asp-controller="Usuario" asp-action="Sair">Sair</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <!-- Editor de código -->
+    <div class="editor__wrapper">
+        <p class="text">EDITOR</p>
+        <div class="editor__body">
+            <div id="editorCode" class="editor__code"></div>
+        </div>
+        <div class="btns">
+            <button class="editor__btn editor__run">EXECUTAR</button>
+            <button class="editor__btn editor__reset">LIMPAR</button>
+        </div>
+        <div class="editor__footer">
+            <div class="editor__footer--left"></div>
+            <div class="editor__footer--right">
+                <p class="text">SAÍDA</p>
+                <div class="editor__console">
+                    <ul class="editor__console-logs"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+<!-- Bibliotecas necessárias do Ace -->
+<script src="~/js/ace-editor/src-min/ace.js"></script>
+<script src="~/js/ace-editor/src-min/mode-javascript.js"></script>
+<script src="~/js/ace-editor/src-min/ext-language_tools.js"></script>
+<script src="~/js/aula_funcoes.js"></script>
+
+
+<!-- Customização -->
+<script src="~/js/editor.js"></script>
+<script src="~/js/editor-console.js"></script>

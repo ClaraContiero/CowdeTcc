@@ -1,0 +1,10 @@
+﻿@if (TempData["msg"] != null)
+{
+   
+    <script>
+        if (@TempData["msg"].ToString().IndexOf("sucesso") > 0)
+            toastr.success('@TempData["msg"]')
+        else
+            toastr.error('@TempData["msg"]')
+    </script>
+}

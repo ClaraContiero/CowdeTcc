@@ -1,0 +1,218 @@
+﻿h1 {
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    font-family: "Press Start 2P", cursive;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    position: relative;
+    z-index: 5;
+    max-width: fit-content;
+    overflow: hidden;
+    border-right: 10px solid white;
+    white-space: nowrap;
+    margin: auto auto;
+    letter-spacing: normal;
+    animation: typing 4.5s steps(50, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Efeito de digitação */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 70%;
+    }
+}
+
+/* Efeito do cursor*/
+@keyframes blink-caret {
+
+    from, to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: white;
+    }
+}
+
+.texto {
+    color: white;
+    font-family: "Press Start 2P", cursive;
+    font-size: 12px;
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    position: relative;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+}
+
+    .texto p {
+        text-align: justify;
+        margin-top: 70px;
+        line-height: 25px;
+        border: 3px solid white;
+        border-radius: 2px;
+        padding: 2%;
+    }
+
+.membros {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+    .membros h3 {
+        color: red;
+    }
+
+    .membros p {
+        text-align: justify;
+        margin-top: 70px;
+        line-height: 25px;
+        font-size: 10px;
+        border: none;
+    }
+
+    .membros img {
+        width: 300px;
+        border: 3px solid white;
+        border-radius: 2px;
+    }
+
+        .membros img:hover {
+            scale: 1.02;
+        }
+
+.descricao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    padding: 2%;
+}
+
+#a {
+    border: 3px solid #3bff14;
+}
+
+#b {
+    border: 3px solid #ff148a;
+}
+
+#c {
+    border: 3px solid #ffdd17;
+}
+
+#d {
+    border: 3px solid #04a5ff;
+}
+
+/*DropDown*/
+
+.perfil-img {
+    width: 50px;
+    border-radius: 100%;
+    border: 2px solid white;
+    background-color: #0c053b;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+.drop-down_perfil {
+    background-color: #2d2755;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    border: 2px solid white;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 65px;
+    right: 310px;
+    z-index: 5;
+    margin: 0;
+}
+
+.drop:hover .drop-down_perfil {
+    display: flex;
+    cursor: pointer;
+}
+
+.text-drop {
+    font-family: "Courier Prime", monospace;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+    .text-drop:hover {
+        color: #ff148a;
+        text-decoration: underline;
+    }
+
+
+/* Menu Hamburger */
+.topnav {
+    overflow: hidden;
+    background-color: #06002e;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    display: none;
+}
+
+.a-link {
+    text-align: center;
+    width: auto;
+}
+
+.topnav #myLinks {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.topnav a {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+    font-family: "Press Start 2P", cursive;
+}
+
+    .topnav a.icon {
+        background: #06002e;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        align-items: center;
+    }
+
+    .topnav a:hover {
+        background-color: #c42172;
+        color: rgb(255, 255, 255);
+        transition: 0.3s;
+    }
+
+.logoHambger {
+    width: 120px;
+    align-content: center;
+}
+
+
+.title-responsive {
+    display: none;
+}

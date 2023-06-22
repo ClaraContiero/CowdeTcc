@@ -1,0 +1,170 @@
+@using mvc_cowde.Controllers
+@using Microsoft.AspNetCore.Http
+@model mvc_cowde.Models.CadastroLogin
+
+@{
+    string email;
+    email = Context.Session.GetString("email1");
+    mvc_cowde.Controllers.DadosController listar = new mvc_cowde.Controllers.DadosController();
+    CadastroLogin usuario = new CadastroLogin();
+    usuario = listar.ListarDados(email);
+}
+
+@{
+<link rel="stylesheet" href="~/css/stylePerfil.css" />
+<link rel="stylesheet" href="~/css/nav.css" />
+<link rel="stylesheet" href="~/css/perfil.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+}
+
+
+
+<body>
+    <!-- Background da navbar -->
+    <div class="nav-background">
+        <img class="img-background1" src="~/img/background.png" alt="" />
+        <img class="img-background2" src="~/img/background.png" alt="" />
+        <img class="img-background3" src="~/img/background.png" alt="" />
+    </div>
+
+    <!-- NavBar -->
+    <nav class="nav-bar">
+        <div class="elementos-nav">
+            <a asp-controller="Home" asp-action="Modulos">
+                <img class="logo_nav" src="~/img/logoCowde_ofc.png" alt="">
+            </a>
+
+            <div class="links-nav">
+                <a class="text-nav" asp-area="" asp-controller="Home" asp-action="Modulos">Modulos</a>
+            </div>
+            <div class="drop">
+                @{
+                    string nome = ViewBag.Avatar;
+                    string formato = "/img/avatares/" + nome;
+                }
+                <img class="perfil-img" src="@formato" alt="" />
+                <div class="drop-down_perfil">
+                    <a class="text-drop" asp-area="" asp-controller="Home" asp-action="Perfil" id="link1">Perfil</a>
+                    <a class="text-drop" asp-area="" asp-controller="Usuario" asp-action="Sair">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+      <!-- Menu Hamburger Responsivo -->
+    <div class="topnav">
+        <a asp-controller="Home" asp-action="Modulos">
+            <img class="logoHambger" src="~/img/logoCowde_ofc.png" alt="" />
+        </a>
+        <div id="myLinks">
+            <a class="a-link" asp-area="" asp-controller="Home" asp-action="Modulos">Módulos</a>
+            <a class="a-link" asp-area="" asp-controller="Home" asp-action="SobreNos">Sobre nós</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="Burger()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <script>
+        // Código pra ocultar os links e também o menu
+        function Burger() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+        var nav = document.querySelector(".topnav").style.display;
+        if ((nav.style.display = "flex")) {
+            Burger();
+        }
+    </script>
+
+    <!-- Telinha progresso -->
+    <div class="telinhas">
+        <div class="perfil" id="perfil">
+
+            <!--Imagem de perfil do usuário-->        
+            @if (Model != null)
+            {
+                <img class="img-avat-principal" src="~/img/avatares/@Model.Avatar" alt="" />
+            }
+
+            <p class="nome-usuario">Olá, <span style="color: #FF148A">@{Write(usuario.nome_usuario);}</span> </p>
+            <p class="usuario">@{Write(usuario.nome);}</p>
+            <button onclick="mudar()" class="but-editar-perfil">EDITAR PERFIL</button>
+        </div>
+
+        <div class="perfil-update" id="perfil-update">
+            <form class="forms" asp-controller="Usuario" asp-action="Atualizar">
+                <div class="usuario-perfil-editar">
+                    <div class="editar-foto2">
+                        <div class="editar-foto">
+                            <img class="img-avat-principal" src="~/img/avatares/@Model.Avatar" alt="" />
+                            <button onclick="mudarAvatar()" class="lapis-editar"><span style="font-size: 25px; cursor:pointer">🖍️</span>
+                            </button>
+                        </div>
+
+                        <div class="avatares" id="avatarzinho">
+                             <!-- Pop up -->      
+                            <input type="radio" name="imagem" id="vaquinha" value="vaquinha.png" checked />
+                            <div class="opc_avatar">
+                                <label for="vaquinha"><img class="img-avat" src="~/img/avatares/vaquinha.png" /></label>
+                            </div>
+
+                            <input type="radio" name="imagem" id="pintinho" value="pintinho.png" checked />
+                            <div class="opc_avatar">
+                                <label for="pintinho"><img class="img-avat" src="~/img/avatares/pintinho.png" /></label>
+                            </div>
+
+                            <input type="radio" name="imagem" id="coelhinho" value="coelhinho.png" checked />
+                            <div class="opc_avatar">
+                                <label for="coelhinho"><img class="img-avat" src="~/img/avatares/coelhinho.png" /></label>
+                            </div>
+
+                            <input type="radio" name="imagem" id="porquinha" value="porquinha.png" checked />
+                            <div class="opc_avatar">
+                                <label for="porquinha"><img class="img-avat" src="~/img/avatares/porquinha.png" /></label>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="nome-usuario">Olá, <span style="color: #FF148A">@{Write(usuario.nome_usuario);}</span> </p>
+                    <p class="usuario">@{Write(usuario.nome);}</p>
+                </div>
+                <div class="input">
+                    <input asp-for="Nome" type="text" class="input_field" />
+                    <label asp-for="Nome" class="input_label">Nome:</label>
+                </div>
+                <br><br>
+                <div class="input">
+                    <input asp-for="nome_usuario" type="text" class="input_field" required />
+                    <label asp-for="nome_usuario" class="input_label">Nome de usuário:</label>
+                </div>
+                <button class="but-salvar" type="submit">SALVAR MUDANÇAS</button>
+            </form>
+        </div>
+
+        <div class="progressos">
+            <div class="progresso-geral">
+                <p class="progresso">Progresso Geral</p>
+                <p class="porc-geral">100%</p>
+            </div>
+
+            <div class="modulos-conc">
+                <p class="modulos">Módulos Concluídos</p>
+                <p class="mod-conc">4</p>
+            </div>
+        </div>
+
+    </div>
+
+    <ul></ul>
+
+       <!-- Js -->      
+    <script src="~/js/site.js"></script>
+    <script src="~/js/editar_perfil.js"></script>
+
+</body>
+
+</html>

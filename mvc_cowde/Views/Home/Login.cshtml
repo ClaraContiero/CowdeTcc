@@ -1,0 +1,45 @@
+@model mvc_cowde.Models.UsuarioCadastrado
+@using Microsoft.AspNetCore.Http;
+
+@{
+    ViewData["Title"] = "Login";
+    TempData["Sit_Footer"] = "falso";
+
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/login.css">
+}
+
+<body>
+    <ul></ul>
+
+    <section class="elementos">
+        <!-- Logo -->
+        <a asp-controller="Home" asp-action="Index">
+            <img class="logo_cowde" src="~/img/logoCowde_ofc.png" alt="">
+        </a>
+
+        <!-- Login -->
+        <form class="forms" method="post" asp-controller="Usuario" asp-action="Logar">
+            <div class="input">
+                <input asp-for="email" type="text" name="email" class="input_field" id="x" required />
+                <label class="input_label">Email:</label>
+            </div>
+            <br><br>
+            <div class="input">
+                <input asp-for="senha" type="password" name="senha" class="input_field" required />
+                <label class="input_label">Senha:</label>
+            </div>
+            @if (Context.Session.GetString("user") == null)
+            {
+                <button type="submit" class="but_login" value="">LOGIN</button>
+            }
+        </form>
+        <p class="link_cadastro">Não possui uma conta? Faça seu <a class="link" asp-area="" asp-controller="Home"  
+                      asp-action="Cadastro">Cadastro</a>!</p>
+        <img class="pintin" src="~/img/pintin.png" alt="">
+    </section>
+
+    <!-- Js -->
+    <script src="~/js/site.js"></script>
+</body>
+

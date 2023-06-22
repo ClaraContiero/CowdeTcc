@@ -1,0 +1,92 @@
+@{
+    ViewData["Title"] = "Questionario";
+
+    <link rel="stylesheet" href="~/css/styleQuiz.css" />
+    <link rel="stylesheet" href="~/css/questionario.css" />
+    <link rel="stylesheet" href="~/css/nav.css" />
+}
+
+<body>
+    <ul></ul>
+    <!-- Background da navbar -->
+    <div class="nav-background">
+        <img class="img-background1" src="~/img/background.png" alt="" />
+        <img class="img-background2" src="~/img/background.png" alt="" />
+        <img class="img-background3" src="~/img/background.png" alt="" />
+    </div>
+
+    <!-- NavBar -->
+    <nav class="nav-bar">
+        <div class="elementos-nav">
+            <a asp-controller="Home" asp-action="Modulos">
+                <img class="logo_nav" src="~/img/logoCowde_ofc.png" alt="">
+            </a>
+
+            <div class="links-nav">
+                <a class="text-nav" asp-area="" asp-controller="Home" asp-action="Modulos">Modulos</a>
+            </div>
+            <div class="drop">
+                @{
+                    string nome = ViewBag.Avatar;
+                    string formato = "/img/avatares/" + nome;
+                }
+                <img class="perfil-img" src="@formato" alt="" />
+                <div class="drop-down_perfil">
+                    <a class="text-drop" asp-area="" asp-controller="Home" asp-action="Perfil" id="link1">Perfil</a>
+                    <a class="text-drop" asp-area="" asp-controller="Usuario" asp-action="Sair">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal" id="modalCerto">
+        <p class="x" onclick="fecharPopUp()">X</p>
+        <p class="titulo-modal">Hey!</p>
+        <p class="text-modal">Parabéns, você acertou! Continue assim.</p>
+        <img class="vaquinha" src="~/img/vaquinha_jennifer.png" alt="">
+    </div>
+
+    <div class="modal" id="modalErrado">
+        <p class="x" onclick="fecharPopUp()">X</p>
+        <p class="titulo-modal">Ahhh...</p>
+        <p class="text-modal">Você errou (T-T) Vai se sair melhor na próxima.</p>
+        <img class="vaquinha" src="~/img/vaquinha_jennifer.png" alt="">
+    </div>
+
+    <!-- Questionário -->
+    <div class="card" id="opacidade">
+        <div class="textos">
+            <p class="titulo">Vamos testar o que você aprendeu?</p>
+            <p class="pergunta">
+                Vamos imaginar que você tem uma lista de compras em sua mão, com os seguintes ingredientes:
+                Farinha, açúcar, ovos, leite, chocolate em pó e fermento. Como sua array ficaria e de que forma você poderia
+                eliminar o último ingrediente da lista?
+            </p>
+        </div>
+
+        <div class="alternativa">
+            <div class="alt" id="resp3" onclick="respostaErrada3()">
+                <p>a) var ingredientes = (”Farinha”, “açúcar”, “ovos”, “leite”, “chocolate em pó”, “fermento”) // utilizando um .pop();</p>
+            </div>
+            <div class="alt" id="resp1" onclick="respostaErrada1()">
+                <p>b) var ingredientes = [”Farinha”; “açúcar”; “ovos”; “leite”; “chocolate em pó”; “fermento”] // utilizando um .unshift();</p>
+            </div>
+            <div class="alt" id="resp2" onclick="respostaErrada2()">
+                <p>c) var ingredientes = [Farinha, açúcar, ovos, leite, chocolate em pó, fermento] // utilizando um .join();</p>
+            </div>
+            <div class="alt" id="respCerta" onclick="respostaCerta()">
+                <p>d) var ingredientes = [”Farinha”, “açúcar”, “ovos”, “leite”, “chocolate em pó”, “fermento”] // utilizando um .pop();</p>
+            </div>
+
+            <div class="botoes">
+                <a asp-controller="Home" asp-action="Modulos">
+                    <button class="but-avancar">CONCLUIR</button>
+                </a>
+            </div>
+        </div>
+        <!-- Js -->
+        <script src="~/js/site.js"></script>
+        <script src="~/js/quiz_validacao.js"></script>
+    </div>
+</body>

@@ -1,0 +1,404 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    position: absolute;
+}
+
+.card {
+    background-color: #2d2755;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    font-family: "Press Start 2P", cursive;
+    font-size: 12px;
+    width: 900px;
+    margin-top: 5px;
+    border-radius: 2px;
+    position: relative;
+    z-index: 5;
+    align-items: center;
+    margin: auto auto;
+}
+
+.textos {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.titulo {
+    font-size: 20px;
+    padding: 5px;
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-bottom: 40px;
+    max-width: fit-content;
+    overflow: hidden;
+    border-right: 10px solid white;
+    white-space: nowrap;
+    margin: auto auto;
+    letter-spacing: normal;
+    animation: typing 3.0s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+/* Efeito de digitação */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 70%
+    }
+}
+
+/* Efeito do cursor*/
+@keyframes blink-caret {
+
+    from, to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: white;
+    }
+}
+
+.pergunta {
+    font-size: 12px;
+    margin: 2% 10% 0 10%;
+    line-height: 25px;
+}
+
+.alternativa {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+}
+
+    .alternativa p {
+        font-family: "Courier Prime", monospace;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+.alt {
+    display: flex;
+    background-color: #06002e;
+    border: 2px solid #ffffff;
+    width: auto;
+    height: 10vh;
+    margin-bottom: 25px;
+    padding-left: 20px;
+    align-items: center;
+    border-radius: 2px;
+}
+
+    .alt:hover {
+        scale: 1.001;
+        background-color: #7925bd;
+    }
+
+.botoes {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    z-index: 2;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.but-voltar {
+    background-color: #8aeb27;
+    font-family: "Press Start 2P", cursive;
+    font-size: 12px;
+    width: 120px;
+    height: 50px;
+    border: none;
+    border-radius: 2px;
+}
+
+    .but-voltar:hover {
+        scale: 1.02;
+        background-color: #60b906;
+    }
+
+.but-avancar {
+    background-color: #ff148a;
+    font-family: "Press Start 2P", cursive;
+    font-size: 12px;
+    width: 120px;
+    height: 50px;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    margin-left: auto;
+}
+
+    .but-avancar:hover {
+        scale: 1.02;
+        background-color: #c42172;
+    }
+
+/* Pop Up */
+
+.modal {
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+    width: 500px;
+    height: 400px;
+    text-align: center;
+    align-items: center;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    z-index: 10;
+    margin-left: 35%;
+    margin-top: 2%;
+    padding: 15px;
+}
+
+.x {
+    font-family: 'Press Start 2P', cursive;
+    color: #04A5FF;
+    font-size: 35px;
+    margin: 0;
+    margin-left: 85%;
+    display: flex;
+    cursor: pointer;
+}
+
+    .x:hover {
+        color: #026097;
+        scale: 1.02;
+    }
+
+.titulo-modal {
+    color: #27c507;
+    font-family: "Courier Prime", monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 50px;
+    padding: 20px;
+    margin: 0;
+}
+
+.text-modal {
+    font-family: "Courier Prime", monospace;
+    line-height: 25px;
+    font-size: 20px;
+    color: #ba037d;
+    font-weight: 500;
+    margin: 0;
+}
+
+.vaquinha {
+    width: 190px;
+    justify-content: center;
+}
+
+/* Footer */
+footer {
+    background-color: #2d2755;
+    height: 20%;
+    position: relative;
+    bottom: 0;
+    z-index: 5;
+    margin-top: 10%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid white;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+}
+
+.logo-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    margin-top: 50px;
+}
+
+.iconsImg {
+    width: 35px;
+    cursor: pointer;
+}
+
+    .iconsImg:hover {
+        scale: 1.05;
+    }
+
+
+.logoFoot {
+    width: 130px;
+    margin: 0;
+}
+
+.pFoot {
+    font-size: 12px;
+    font-family: "Courier Prime", monospace;
+    color: white;
+}
+
+.links {
+    font-family: "Press Start 2P", cursive;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.logoFoot {
+    width: 130px;
+    margin: 0;
+}
+
+.pFoot {
+    font-size: 12px;
+    font-family: "Courier Prime", monospace;
+    color: white;
+}
+
+.links {
+    font-family: "Press Start 2P", cursive;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+    .links a {
+        text-decoration: none;
+        color: white;
+    }
+
+        .links a:hover {
+            color: #c42172;
+            text-decoration: underline;
+        }
+
+hr {
+    height: 10px;
+    color: #8aeb27;
+}
+
+hr {
+    height: 10px;
+    color: #8aeb27;
+}
+
+/*DropDown*/
+
+.perfil-img {
+    width: 50px;
+    border-radius: 100%;
+    border: 2px solid white;
+    background-color: #0c053b;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+.drop-down_perfil {
+    background-color: #2d2755;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    border: 2px solid white;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 65px;
+    right: 310px;
+    z-index: 5;
+    margin: 0;
+}
+
+.drop:hover .drop-down_perfil {
+    display: flex;
+    cursor: pointer;
+}
+
+.text-drop {
+    font-family: "Courier Prime", monospace;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+    .text-drop:hover {
+        color: #ff148a;
+        text-decoration: underline;
+    }
+
+/* Menu Hamburger */
+.topnav {
+    overflow: hidden;
+    background-color: #06002e;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    display: none;
+}
+
+.a-link {
+    text-align: center;
+    width: auto;
+}
+
+.topnav #myLinks {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.topnav a {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+    font-family: "Press Start 2P", cursive;
+}
+
+    .topnav a.icon {
+        background: #06002e;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        align-items: center;
+    }
+
+    .topnav a:hover {
+        background-color: #c42172;
+        color: rgb(255, 255, 255);
+        transition: 0.3s;
+    }
+
+.logoHambger {
+    width: 120px;
+    align-content: center;
+}
+

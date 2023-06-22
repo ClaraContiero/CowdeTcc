@@ -1,0 +1,176 @@
+
+@{
+    ViewData["Title"] = "Home";
+    <link rel="stylesheet" href="~/css/nav.css">
+    <link rel="stylesheet" href="~/css/styleIndex.css">
+    <link rel="stylesheet" href="~/css/faq.css">
+    <link rel="stylesheet" href="~/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+}
+
+<body>
+    <ul></ul>
+    <!-- Background da navbar -->
+    <div class="nav-background">
+        <img class="img-background1" src="~/img/background.png" alt="">
+        <img class="img-background2" src="~/img/background.png" alt="">
+        <img class="img-background3" src="~/img/background.png" alt="">
+    </div>
+
+    <!-- NavBar -->
+    <nav class="nav-bar">
+        <div class="elementos-nav">
+            <a asp-controller="Home" asp-action="Index">
+                <img class="logo_nav" src="~/img/logoCowde_ofc.png" alt="">
+            </a>
+
+            <div class="links-nav">
+                <a class="text-nav" asp-area="" asp-controller="Home" asp-action="Cadastro">Cadastre-se</a>
+            </div>
+
+            <a asp-controller="Home" asp-action="Login">
+                <div class="but-entrar">
+                    <img class="but-amarelo" src="~/img/but-amarelo.png" alt="">
+                    <p class="text-but">Entrar</p>
+                </div>
+            </a>
+        </div>
+    </nav>
+
+     <!-- Menu Hamburger Responsivo -->
+    <div class="topnav">
+        <img class="logoHambger" src="~/img/logoCowde_ofc.png" alt="" />
+        <div id="myLinks">
+            <a class="a-link" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+            <a class="a-link" asp-area="" asp-controller="Home" asp-action="Cadastro">Cadastro</a>
+        </div>
+
+        <a href="javascript:void(0);" class="icon" onclick="Burger()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <script>
+        // Código pra ocultar os links e também o menu
+        function Burger() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+        var nav = document.querySelector(".topnav").style.display;
+        if ((nav.style.display = "flex")) {
+            Burger();
+        }
+    </script>
+
+
+    <!-- Conteúdo pt.1 -->
+    <div class="conteudo">
+        <p class="introducao">
+            Aprenda a <span style="color: #ffdd17">codificar</span> em
+            <span style="color: #04a5ff">JavaScript</span>  com
+            aulas simples e divertidas...
+        </p>
+
+        <div class="cards">
+            <div class="bicho-lousinha">
+                <img class="vaquinha" src="~/img/vaquinha_jennifer.png" alt="" />
+                <img class="lousinha" src="~/img/bordinhaVerde.png" alt="" />
+                <p class="texto-lousa">Pensamento <br> Lógico</p>
+            </div>
+
+            <div class="bicho-lousinha">
+                <img class="pintinho" src="~/img/pintin.png" alt="" />
+                <img class="lousinha" src="~/img/bordinhaPintada.png" alt="" />
+                <p class="texto-lousa">Criatividade</p>
+            </div>
+
+            <div class="bicho-lousinha">
+                <img class="coelhinho" src="~/img/coelhinho.png" alt="" />
+                <img class="lousinha" src="~/img/bordinhaAzul.png" alt="" />
+                <p class="texto-lousa">Prática</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo pt.2 -->
+
+    <div class="parceiros">
+        <p class="text-parceiros">
+            Nossos <span style="color: #ff148a">parceiros</span>
+        </p>
+        <img class="parceiro-img" src="~/img/senai.png" alt="" />
+    </div>
+
+    <!-- Conteúdo pt.3 -->
+    <!--  Mobile  -->
+    <div class="mobile-demo">
+        <img class="mobile-demo-img" src="~/img/mobile.png" />
+        <div class="p-img">
+            <p>Acompanhe seu <span style="color: #3bff14">progresso</span> através do aplicativo!</p>
+            <img class="vaquinha-mob" src="~/img/vaquinha_jennifer.png" />
+        </div>
+    </div>
+
+
+    <section class="faq-container">
+        <p class="text-faq"><span style="color: #04a5ff">FAQ</span></p>
+
+        <div class="faq-one">
+            <!-- pergunta do faq -->
+            <h1 class="faq-page">O que é o <span style="color: #ffdd17">Cowde?</span></h1>
+
+            <!-- resposta do faq -->
+            <div class="faq-body">
+                <p class="faq-p">
+                    É uma plataforma criada especialmente para ensinar a linguagem de
+                    programação JavaScript para crianças.
+                </p>
+            </div>
+        </div>
+        <hr class="hr-line" />
+
+        <div class="faq-two">
+            <!-- pergunta do faq -->
+            <h1 class="faq-page">
+                Qual é a <span style="color: #ff148a">idade</span> certa para utilizar a plataforma?
+            </h1>
+
+            <!-- resposta do faq -->
+            <div class="faq-body">
+                <p class="faq-p">
+                    Qualquer criança a partir dos 7 anos de idade pode se cadastrar e
+                    aprender a programar!
+                </p>
+            </div>
+        </div>
+        <hr class="hr-line" />
+
+        <div class="faq-three">
+            <!-- pergunta do faq -->
+            <h1 class="faq-page">Quais <span style="color: #3bff14">tópicos</span> são ensinados nessa plataforma?</h1>
+
+            <!--  resposta do faq -->
+            <div class="faq-body">
+                <p class="faq-p">
+                    Aqui ensinamos os fundamentos básicos do JavaScript, como lógica de
+                    programação, algoritmo, laços de repetição, variáveis, operadores
+                    etc.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <ul></ul>
+    <!-- Js -->
+    <script src="~/js/site.js"></script>
+
+</body>
+
+
+
+

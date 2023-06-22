@@ -1,0 +1,364 @@
+﻿
+@{
+    ViewData["Title"] = "Aula";
+    <link rel="stylesheet" href="~/css/editor-style.css" />
+    <link rel="stylesheet" href="~/css/nav.css" />
+    <link rel="stylesheet" href="~/css/styleAula.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+}
+
+
+
+<body>
+    <!--Background da navbar-->
+    <div class="nav-background">
+        <img class="img-background1" src="~/img/background.png" alt="" />
+        <img class="img-background2" src="~/img/background.png" alt="" />
+        <img class="img-background3" src="~/img/background.png" alt="" />
+    </div>
+
+
+    <!-- NavBar -->
+    <nav class="nav-bar">
+        <div class="elementos-nav">
+            <a asp-controller="Home" asp-action="Modulos">
+                <img class="logo_nav" src="~/img/logoCowde_ofc.png" alt="">
+            </a>
+
+            <div class="links-nav">
+                <a class="text-nav" asp-area="" asp-controller="Home" asp-action="Modulos">Modulos</a>
+            </div>
+            <div class="drop">
+                @{
+                    string nome = ViewBag.Avatar;
+                    string formato = "/img/avatares/" + nome;
+                }
+                <img class="perfil-img" src="@formato" alt="" />
+                <div class="drop-down_perfil">
+                    <a class="text-drop" asp-area="" asp-controller="Home" asp-action="Perfil" id="link1">Perfil</a>
+                    <a class="text-drop" asp-area="" asp-controller="Usuario" asp-action="Sair">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hamburger Responsivo -->
+    <div class="topnav">
+        <a asp-controller="Home" asp-action="Modulos">
+            <img class="logoHambger" src="~/img/logoCowde_ofc.png" alt="" />
+        </a>
+        <div id="myLinks">
+            <a class="a-link" asp-area="" asp-controller="Home" asp-action="Modulos">Módulos</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="Burger()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <!-- Código pra ocultar os links e também o menu -->
+    <script>
+        function Burger() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+        var nav = document.querySelector(".topnav").style.display;
+        if ((nav.style.display = "flex")) {
+            Burger();
+        }
+    </script>
+
+    <!-- Ajuda Pop-Up -->
+    <img id="but-ajuda" onclick="ajuda()" src="~/img/botaoUquee.png" alt="">
+    <div class="modal-ajuda" id="modal">
+        <div class="modalX">
+            <div class="elementosGeral">
+                <p class="x" onclick="fecharPopUp()">X</p>
+                <div class="elementos">
+                    <p class="text-modal">• Esse é o editor, onde você vai digitar seu código!</p>
+                    <img class="img" src="~/img/editorTxt.png" alt="">
+                    <p class="text-modal">
+                        • Esses são os botões. O amarelo vai fazer seu código funcionar, e o rosa vai limpar
+                        tudo
+                        o que estiver na tela. Cuidado!
+                    </p>
+                    <img class="botoes-img" src="~/img/botoes.png" alt="">
+                </div>
+                <div class="elementos">
+                    <p class="text-modal">• Este é o campo que vai mostrar o que você deve digitar.</p>
+                    <img class="img" src="~/img/dica.png" alt="">
+                    <p class="text-modal">• E é aqui que vão aparecer seus resultados!</p>
+                    <img class="img" src="~/img/saida.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Pop-up contra copiar e colar-->
+    <div class="modal" id="modal-colar">
+        <p class="x" onclick="fecharPopUp4()">X</p>
+        <p class="titulo-modal">Epa!</p>
+        <p class="text-modal">Tente digitar ao invés de copiar e colar, garantimos que seu aprendizado será melhor!</p>
+        <img class="vaquinha" src="~/img/pintin.png" alt="">
+    </div>
+
+    <main id="opacidade">
+        <div class="card-text">
+            <p class="titulo">
+                <span style="color: #3bff14">4. Objetos, condicionais e loops:</span> como funcionam?
+            </p>
+
+            <!-- parte 1 -->
+            <div id="aula-pt1">
+                <p class="texto">
+                    Criando um objeto 😋
+                </p>
+                <p class="texto">
+                    Lembra do exemplo de nos descrevermos? Então chegou o momento!
+                </p>
+                <p class="texto">
+                    Para criar um objeto basta declarar uma variável com o nome que você quiser e declarar entre as chaves alguns atributos.
+                    Por aqui decidi descrever um de nossos amigos e ficou assim:
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var vaquinha = { <br>
+                    "nome": "Jennifer",<br>
+                    "idade": 2,<br>
+                    "nacionalidade": "brasileira",<br>
+                    "corFavorita": "roxo"<br>
+                    };<br>
+                    console.log(vaquinha);
+                </p>
+                <p class="texto">
+                    Nesse exemplo nós criamos uma variável “vaquinha” e ligamos um objeto com quatro pares de valores-chave a ela.
+                </p>
+                <p class="texto">
+                    A gente percebe também que a chave sempre é uma string, mas os valores podem ser apresentados em qualquer valor.
+                    Como no par [”idade” :  2] em que o atributo é um número.
+                </p>
+                <p class="texto">
+                    Para acessar um valor específico dentro de um objeto basta indicar qual chave você quer visualizar.
+                </p>
+                <p class="texto">
+                    Por exemplo qual é a casa de hogwarts da Hermione? 🧙‍♀️🪄🦁
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var Hermione = {<br>
+                    "sobrenome": "Granger",<br>
+                    "nacionalidade": "inglesa",<br>
+                    "casa": "Grifinória"<br>
+                    };<br>
+                    console.log(Hermione.casa);<br>
+                    <br>
+                    //ou se a chave tiver espaço em seu nome<br>
+                    <br>
+                    var Hermione = {<br>
+                    "sobrenome": "Granger",<br>
+                    "nacionalidade": "inglesa",<br>
+                    "casa de hogwarts": "Grifinória"<br>
+                    };<br>
+                    console.log(Hermione["casa de hogwarts"]);
+                </p>
+                <p class="texto">
+                    Você sabia ainda que podemos combinar arrays com objetos? Veja esse exemplo:
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var alunos = [<br>
+                    { nome: "Hermione", casa: "Grifinoria" },<br>
+                    { nome: "Draco", casa: "Sonserina" },<br>
+                    { nome: "Cedrico", casa: "Lufa lufa" },<br>
+                    { nome: "Luna", casa: "Corvinal"}<br>
+                    ];<br>
+                    console.log(alunos);
+                </p>
+                <p class="texto">
+                    Então se quiser todos os dados de um aluno pode chamar da seguinte forma:
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var alunos = [ "<br>
+                    { nome: "Hermione", casa: "Grifinoria" }, "<br>
+                    { nome: "Draco", casa: "Sonserina" },"<br>
+                    { nome: "Cedrico", casa: "Lufa lufa" },"<br>
+                    { nome: "Luna", casa: "Corvinal"}"<br>
+                    ];"<br>
+                    console.log(alunos[0]);
+                </p>
+                <p class="texto">
+                    Ou se quiser uma informação mais específica chamaremos assim:
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var alunos = [ "<br>
+                    { nome: "Hermione", casa: "Grifinoria" }, "<br>
+                    { nome: "Draco", casa: "Sonserina" },"<br>
+                    { nome: "Cedrico", casa: "Lufa lufa" },"<br>
+                    { nome: "Luna", casa: "Corvinal"}"<br>
+                    ];"<br>
+                    console.log(alunos[2]["nome"];);
+                </p>
+                <div class="butns">
+                    <button class="btn-avancar" id="butAvan" onclick="avancar_conteudo1()">AVANÇAR</button>
+                </div>
+            </div>
+
+
+            <!-- parte 2 -->
+            <div id="aula-pt2">
+
+                <p class="texto">
+                    Trabalhando com condicionais 🎭
+                </p>
+                <p class="texto">
+                    As condicionais podem aparecer de duas formas: if ou if else. O primeiro é para quando só temos uma informação e
+                    ela é verdadeira, já o segundo é para quando temos duas informações sendo uma verdadeira e outra falsa.
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var nome = "Mariazinha"; <br>
+                    if (nome.length > 7) { <br>
+                    console.log("Nossa, você tem um nome muito longo!");
+                    }
+                </p>
+                <p class="texto">
+                    Mas nem todos os nomes seguem essa regra né? Por isso vamos colocar um else, ou seja, se estamos lidando com diferentes
+                    respostas a uma pergunta, também devemos ter diferentes ações.
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var nome = "Mariazinha"; <br>
+                    if (nome.length > 7) { <br>
+                    console.log("Nossa, você tem um nome muito longo!"); <br>
+                    }else{ <br>
+                    console.log("Nossa, você tem um nome muito curto!"); <br>
+                    }
+                </p>
+                <p class="texto">
+                    Você ainda pode brincar com uma corrente de condicionais, olhe esse exemplo de um restaurante e brinque mudando seus estados(true/false).
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var macarrao = false;<br>
+                    var sushi = false;<br>
+                    var taco = true;<br>
+                    if (macarrao) {<br>
+                    console.log("Beleza! Eu vou querer macarrão!");<br>
+                    } else if (temaki) {<br>
+                    console.log("Então vou querer um temaki mesmo");<br>
+                    } else if (taco) {<br>
+                    console.log("Ok, pode ser um taco então");<br>
+                    } else {<br>
+                    console.log("Bom, já que não tem nada... vou querer uma salada");<br>
+                    }
+                </p>
+
+
+                <div class="butns">
+                    <button class="btn-voltar" onclick="voltar_conteudo1()">VOLTAR</button>
+                    <button class="btn-avancar" id="butAvan" onclick="avancar_conteudo2()">AVANÇAR</button>
+                </div>
+            </div>
+
+            <!-- parte 3 -->
+            <div id="aula-pt3">
+                <p class="texto">
+                    Mexendo com loops 🛹
+                </p>
+                <p class="texto">
+                    Agora relembrando sobre os loops: seu código irá continuar rodando enquanto a sua condição -
+                    a afirmação com um nome mais chique ヾ(^▽^*) - continuar sendo verdade.
+                </p>
+                <p class="texto">
+                    Por exemplo, vamos contar algumas ovelhinhas usando um loop chamado while (enquanto):
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var contagemOvelhas = 0; <br>
+                    while (contagemOvelhas < 10) { <br>
+                    console.log("Eu contei " + contagemOvelhas + " ovelhas!"); <br>
+                    contagemOvelhas++; <br>
+                    } <br>
+                    console.log("Zzzzzzzzzzz");
+                </p>
+                <p class="texto">
+                    Espero que você não tenha dormido hein! (￣o￣) . z Z
+                </p>
+                <p class="texto">
+                    Desse modo, colocamos uma condição para a nossa variável, ou seja, enquanto a contagem de ovelhas não chegar ao valor de 10 ovelhas, a ação continua rolando.
+                </p>
+                <p class="texto">
+                    Outra forma de construirmos a lógica de um loop é o for: ele facilita na hora de escrever e criar variáveis.
+                </p>
+                <p class="texto">
+                    Ou seja, o mesmo código ficaria assim se trocássemos o while pelo for:
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    for (var contagemOvelhas = 0; contagemOvelhas < 10; contagemOvelhas++) {<br>
+                    console.log("Eu contei " + contagemOvelhas + " ovelhas!");<br>
+                    }<br>
+                    console.log("Zzzzzzzzzzz");
+                </p>
+
+                <p class="texto">
+                    (∪.∪ )...zzz
+                </p>
+                <p class="texto">
+                    Agora só vamos entender as partes que compõe a linha de um loop:<br>
+
+                    → Setup (var contagemOvelhas = 0;) : se inicia antes do loop começar, aqui geralmente criamos uma variável e damos uma valor inicial a ela.<br>
+                    <br>
+                    → Condição(contagemOvelhas < 10;) : a condição é revisada toda vez antes do loop se reiniciar. Se ela for verdadeira ele continua rodando, se for falso o loop se encerra.<br>
+                    <br>
+                    → Incremento(contagemOvelhas++) : o incremento é realizado toda vez em que o loop roda, geralmente acrescenta ou decrementa o valor da variável.
+                </p>
+                <p class="texto">
+                    ( U.U)つ Bye
+                </p>
+
+
+                <div class="butns">
+                    <button class="btn-voltar" onclick="voltar_conteudo2()">VOLTAR</button>
+                    <a asp-controller="Home" asp-action="Questionario">
+                        <button class="btn-avancar" id="butAvan" onclick="concluir_conteudo()">CONCLUIR</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Editor de código -->
+        <div class="editor__wrapper">
+            <p class="text">EDITOR</p>
+            <div class="editor__body">
+                <div id="editorCode" class="editor__code"></div>
+            </div>
+            <div class="btns">
+                <button class="editor__btn editor__run">EXECUTAR</button>
+                <button class="editor__btn editor__reset">LIMPAR</button>
+            </div>
+            <div class="editor__footer">
+                <div class="editor__footer--left"></div>
+                <div class="editor__footer--right">
+                    <p class="text">SAÍDA</p>
+                    <div class="editor__console">
+                        <ul class="editor__console-logs"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+    <!-- Bibliotecas necessárias do Ace -->
+    <script src="~/js/ace-editor/src-min/ace.js"></script>
+    <script src="~/js/ace-editor/src-min/mode-javascript.js"></script>
+    <script src="~/js/ace-editor/src-min/ext-language_tools.js"></script>
+    <script src="~/js/aula_funcoes.js"></script>
+
+
+    <!-- Customização -->
+    <script src="~/js/editor.js"></script>
+    <script src="~/js/editor-console.js"></script>
+    <script src="~/js/but-ajuda.js"></script>
+
+</body>
+

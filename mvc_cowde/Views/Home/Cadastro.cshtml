@@ -1,0 +1,87 @@
+﻿@model mvc_cowde.Models.CadastroLogin
+
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+
+@{
+    ViewData["Title"] = "Cadastro";
+    TempData["Sit_Footer"] = "falso";
+}
+
+@{
+    ViewData["Title"] = "Cadastro";
+    TempData["Sit_Perfil"] = "falso";
+}
+
+
+<link rel="stylesheet" href="~/css/style.css">
+<link rel="stylesheet" href="~/css/cadastro.css">
+
+
+<body>
+    <ul></ul>
+
+    <section class="elementos">
+        <!-- Logo -->
+        <a asp-controller="Home" asp-action="Index">
+            <img class="logo_cowde" src="~/img/logoCowde_ofc.png" alt="">
+        </a>
+
+
+        <!-- Login -->
+        <form class="forms" asp-action="Cadastrar" asp-controller="Pessoa">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="input">
+                <input asp-for="Nome" type="text" class="input_field" required />
+                <label asp-for="Nome" class="input_label">Nome Completo:</label>
+                <span asp-validation-for="Nome"></span>
+            </div>
+            <br><br>
+            <div class="input">
+                <input asp-for="Email" type="text" class="input_field" required />
+                <label asp-for="Email" class="input_label">E-mail:</label>
+                <span asp-validation-for="Email"></span>
+            </div>
+            <br><br>
+            <div class="input">
+                <input asp-for="nome_usuario" type="text" class="input_field" required />
+                <label asp-for="nome_usuario" class="input_label">Nome de Usuário:</label>
+                <span asp-validation-for="nome_usuario"></span>
+            </div>
+            <br><br>
+            <div class="input">
+                <input asp-for="idade" type="text" class="input_field" required />
+                <label asp-for="idade" class="input_label">Idade:</label>
+                <span asp-validation-for="idade"></span>
+            </div>
+            <br><br>
+
+            <div class="input">
+                <input asp-for="senha" type="password" class="input_field" required />
+                <label asp-for="senha" class="input_label">Senha:</label>
+                <span asp-validation-for="senha"></span>
+            </div>
+            <br><br>
+            <div class="input">
+                <input asp-for="senha" type="password" class="input_field" required />
+                <label asp-for="senha" class="input_label">Confirmar Senha:</label>
+                <span asp-validation-for="senha"></span>
+            </div>
+
+            <input type="submit" class="but_cadastro"</input>
+
+
+        </form>
+        <p class="link_login">Já tem uma conta? Faça seu <a class="link" asp-action="Login">login</a>!</p>
+    </section>
+
+
+
+</body>
+<script src="~/js/site.js"></script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

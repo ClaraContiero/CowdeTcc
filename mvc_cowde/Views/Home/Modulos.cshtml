@@ -1,0 +1,193 @@
+@{
+<link rel="stylesheet" href="~/css/nav.css" />
+<link rel="stylesheet" href="~/css/modulos.css" />
+<link rel="stylesheet" href="~/css/styleModulos.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+}
+
+
+
+<body id="opacidade">
+
+    <!-- Background da navbar -->
+    <div class="nav-background">
+        <img class="img-background1" src="~/img/background.png" alt="" />
+        <img class="img-background2" src="~/img/background.png" alt="" />
+        <img class="img-background3" src="~/img/background.png" alt="" />
+    </div>
+
+
+    <!-- NavBar -->
+    <div class="nav-position">
+        <nav class="nav-bar">
+            <div class="elementos-nav">
+                <a class="link-modulos">
+                    <img class="logo_nav" src="~/img/logoCowde_ofc.png" alt="">
+                </a>
+
+                <div class="drop">
+                    @{
+                        string nome = ViewBag.Avatar;
+                        string formato = "/img/avatares/" + nome;
+                    }
+                    <img class="perfil-img" src="@formato" alt="" />
+                    <div class="drop-down_perfil">
+                        <a class="link-perfil">
+                            <p class="text-drop" asp-area="" asp-controller="Home" asp-action="Perfil" id="link1">Perfil</p>
+                        </a>                      
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+     <!-- Menu Hamburger Responsivo -->
+    <div class="topnav">
+        <a asp-controller="Home" asp-action="Modulos">
+            <img class="logoHambger" src="~/img/logoCowde_ofc.png" alt="" />
+        </a>
+        <div id="myLinks">
+            <a class="a-link" asp-area="" asp-controller="Home" asp-action="SobreNos">Sobre nós</a>
+            <a class="link-hbg"> Meu perfil </a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="Burger()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <script>
+        // Código pra ocultar os links e também o menu
+        function Burger() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+        var nav = document.querySelector(".topnav").style.display;
+        if ((nav.style.display = "flex")) {
+            Burger();
+        }
+    </script>
+
+  
+
+    <!-- Módulos -->
+    <div class="container">
+        <div class="titulo">
+            <p class="title">
+                Bem vindo(a) ao
+                <span style="color: #3bff14">C</span><span style="color: #04A5FF">o</span><span style="color: #ffff">w</span><span style="color: #FFDD17">d</span><span style="color: #FF148A">e</span>!
+            </p>
+        </div>
+        <p class="title-responsive">Bem vindo(a) ao Cowde!</p>
+
+        <a class="link-perfil2">
+            <button class="but-progresso">ACOMPANHAR PROGRESSO</button>
+        </a>
+        <div class="mod-geral">
+            <div class="modulos">
+                <div class="mod">
+                    <p class="titulo-card"><span style="color: #FF148A">X </span>O que é Javascript?</p>
+
+                    <a class="link-introducao">
+                        <div class="cardzin">
+                            <p class="text-cardzin">• Introdução</p>
+                        </div>
+                    </a>
+
+                    <a class="link-aula">
+                        <div class="cardzin">
+                            <p class="text-cardzin">• Aula</p>
+                        </div>
+                    </a>
+                    <a class="link-questionario">
+                        <div class="cardzin">
+                            <p class="text-cardzin">• Questionário</p>
+                        </div>
+                    </a>
+                    <span class="barra-progresso" id="barra-de-progresso"></span>
+                    <button class="btn-progresso" id="botao-teste">COMPLETE</button>
+                </div>
+
+                <div class="mod">
+                    <p class="titulo-card"><span style="color: #FFDD17">X </span>Tipos de dados e variáveis</p>
+                    <a class="link-introducao2">
+                        <div class="cardzin">
+                            <p class="text-cardzin">• Introdução</p>
+                        </div>
+                    </a>
+                    <a class="link-aula2">
+                        <div class="cardzin">
+                            <p class="text-cardzin">• Aula</p>
+                        </div>
+                    </a>
+                    <a class="link-questionario2">
+                        <div class="cardzin">
+                            <p class="text-cardzin">• Questionário</p>
+                        </div>
+                    </a>
+                    <span class="barra-progresso" id="barra-de-progresso"></span>
+                    <button class="btn-progresso">COMPLETE</button>
+                </div>
+            </div>
+
+            <div class="modulos">
+                <div class="mod">
+                    <p class="titulo-card"><span style="color: #3bff14">X </span>Arrays</p>
+                    <a class="link-introducao3">
+                        <div class="cardzin">
+                            <p class="text-cardzin">• Introdução</p>
+                        </div>
+                    </a>
+                    <a class="link-aula3">
+                        <div class="cardzin">
+                            <p class="text-cardzin">• Aula</p>
+                        </div>
+                    </a>
+                    <a class="link-questionario3">
+                        <div class="cardzin">
+                            <p class="text-cardzin">• Questionário</p>
+                        </div>
+                    </a>
+                    <span class="barra-progresso" id="barra-de-progresso"></span>
+                    <button class="btn-progresso">COMPLETE</button>
+                </div>
+
+                <div class="mod">
+                    <p class="titulo-card"><span style="color: #04A5FF">X </span>Objetos, condicionais e loops</p>
+                    <div class="cardzin">
+                        <a class="link-introducao4">
+                            <p class="text-cardzin">• Introdução</p>
+                        </a>
+                    </div>
+                    <div class="cardzin">
+                        <a class="link-aula4">
+                            <p class="text-cardzin">• Aula</p>
+                        </a>
+                    </div>
+                    <div class="cardzin">
+                        <a class="link-questionario4">
+                            <p class="text-cardzin">• Questionário</p>
+                        </a>
+                    </div>
+                    <span class="barra-progresso" id="barra-de-progresso"></span>
+                    <button class="btn-progresso">COMPLETE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mod1">
+        <img class="pigPunk" src="~/img/pigPunk.png" alt="">
+        <p>Novos conteúdos em <span style="color: #04A5FF">breve</span>...</p>
+    </div>
+    <ul></ul>
+    <!-- Js -->
+    <script src="~/js/site.js"></script>
+    <script src="~/js/dinamic.js"></script>
+   
+
+
+
+</body>

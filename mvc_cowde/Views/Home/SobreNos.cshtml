@@ -1,0 +1,97 @@
+
+@{
+    ViewData["Title"] = "Sobre nós";
+    <link rel="stylesheet" href="~/css/nav.css" />
+    <link rel="stylesheet" href="~/css/styleHome.css" />
+    <link rel="stylesheet" href="~/css/sobreNos.css">
+}
+
+<body>
+    <!-- Background da navbar-->
+    <div class="nav-background">
+        <img class="img-background1" src="~/img/background.png" alt="" />
+        <img class="img-background2" src="~/img/background.png" alt="" />
+        <img class="img-background3" src="~/img/background.png" alt="" />
+    </div>
+
+
+    <!-- NavBar -->
+    <nav class="nav-bar">
+        <div class="elementos-nav">
+            <a asp-controller="Home" asp-action="Modulos">
+                <img class="logo_nav" src="~/img/logoCowde_ofc.png" alt="">
+            </a>
+
+            <div class="links-nav">
+                <a class="text-nav" asp-area="" asp-controller="Home" asp-action="Modulos">Modulos</a>
+            </div>
+            <div class="drop">
+                @{
+                    string nome = ViewBag.Avatar;
+                    string formato = "/img/avatares/" + nome;
+                }
+                <img class="perfil-img" src="@formato" alt="" />
+                <div class="drop-down_perfil">
+                    <a class="text-drop" asp-area="" asp-controller="Home" asp-action="Perfil" id="link1">Perfil</a>
+                    <a class="text-drop" asp-area="" asp-controller="Usuario" asp-action="Sair">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Corpo -->
+    <div class="texto">
+        <h1>
+            <span style="color: #3bff14">S</span><span style="color: #04a5ff">o</span><span style="color: #ffff">b</span><span style="color: #ffdd17">r</span><span style="color: #ff148a">e</span>
+            Nós...
+        </h1>
+        <p>
+            Somos estudantes do terceiro termo de Desenvolvimento de Sistemas, e nosso projeto tem como objetivo incentivar 
+            o público infantil a aprender programação, tendo em vista a importância dessa habilidade atualmente.
+        </p>
+
+        <div class="membros">
+            <img src="~/img/clara.jpg" alt="">
+            <div class="descricao" id="a">
+                <h3 class="1"><span style="color:#3bff14">Clara</span></h3>
+                <p>
+                    Desenvolvedora Front-End que deu vida a esse site e se aventurou no back-end.
+                </p>
+            </div>
+        </div>
+
+        <div class="membros">
+            <div class="descricao" id="b">
+                <h3><span style="color:#ff148a">Caua</span></h3>
+                <p>
+                    Desenvolvedor Back-end, mas que por vontade ou loucura, quis trabalhar um pouco em cada área.
+                </p>
+            </div>
+            <img src="~/img/caua.jpg" alt="">
+        </div>
+        <div class="membros">
+            <img src="~/img/ana.jpg" alt="">
+            <div class="descricao" id="c">
+                <h3><span style="color:#ffdd17">Ana</span></h3>
+                <p>
+                   Desenvolvedora Front-End, mas com uma paixão maior pela organização do projeto e 
+                   ajuda nas suas respectivas necessidades em cada área.
+                </p>
+            </div>
+        </div>
+
+        <div class="membros">
+            <div class="descricao" id="d">
+                <h3><span style="color:#04a5ff">Leonardo</span></h3>
+                <p>
+                    Desenvolvedor Mobile que trabalhou com o nosso aplicativo. Se você vir esse homem, entre em contato. Sujeito à recompensa.
+                </p>
+            </div>
+            <img src="~/img/leo.jpg" alt="">
+        </div>
+    </div>
+     <!-- Js -->
+    <script src="~/js/javaScript.js"></script>
+</body>
+
+

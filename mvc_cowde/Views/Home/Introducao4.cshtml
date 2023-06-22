@@ -1,0 +1,139 @@
+@{
+    ViewData["Title"] = "Introducao";
+
+    <link rel="stylesheet" href="~/css/nav.css" />
+    <link rel="stylesheet" href="~/css/styleHome.css" />
+    <link rel="stylesheet" href="~/css/introducao.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+}
+
+
+<body>
+    <!-- Background da navbar -->
+    <div class="nav-background">
+        <img class="img-background1" src="~/img/background.png" alt="" />
+        <img class="img-background2" src="~/img/background.png" alt="" />
+        <img class="img-background3" src="~/img/background.png" alt="" />
+    </div>
+
+    <!-- NavBar -->
+    <nav class="nav-bar">
+        <div class="elementos-nav">
+            <a asp-controller="Home" asp-action="Modulos">
+                <img class="logo_nav" src="~/img/logoCowde_ofc.png" alt="">
+            </a>
+
+            <div class="links-nav">
+                <a class="text-nav" asp-area="" asp-controller="Home" asp-action="Modulos">Modulos</a>
+            </div>
+            <div class="drop">
+                @{
+                    string nome = ViewBag.Avatar;
+                    string formato = "/img/avatares/" + nome;
+                }
+                <img class="perfil-img" src="@formato" alt="" />
+                <div class="drop-down_perfil">
+                    <a class="text-drop" asp-area="" asp-controller="Home" asp-action="Perfil" id="link1">Perfil</a>
+                    <a class="text-drop" asp-area="" asp-controller="Usuario" asp-action="Sair">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hamburger Responsivo -->
+    <div class="topnav">
+        <img class="logoHambger" src="~/img/logoCowde_ofc.png" alt="" />
+        <div id="myLinks">
+            <a class="a-link" href="#news">News</a>
+            <a class="a-link" href="#contact">Contact</a>
+            <a class="a-link" href="#about">About</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="Burger()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <script>
+        // Código pra ocultar os links e também o menu
+        function Burger() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+        var nav = document.querySelector(".topnav").style.display;
+        if ((nav.style.display = "flex")) {
+            Burger();
+        }
+    </script>
+
+    <!-- Card Introdutório -->
+    <div class="card">
+        <a asp-controller="Home" asp-action="Modulos">
+            <p class="x">X</p>
+        </a>
+        <div class="container">
+            <p class="titulo">Introdução</p>
+        </div>
+
+        <div class="texto">
+            <p>
+                Ufaa, foi um longo caminho até aqui não é? Pois é, para a sua sorte ainda há coisas novas para aprender!
+            </p>
+            <br>
+            <p>
+                Você lembra do que falamos na última aula sobre as arrays?
+                Então, agora veremos um pouco sobre os <span style="color: #ffdd17">objetos</span>, que são basicamente
+                arrays (aquelas listinhas lembra?) que usam strings para achar os valores
+                que queremos dentro delas ao invés de números. Essas strings são chamadas de
+                <span style="color: #ffdd17">“chaves” ou “propriedades”</span>.
+                Como uma dupla,  as chave e os valores são os pares de
+                <span style="color: #ffdd17"> valores-chave</span>. Sacou?
+            </p>
+            <br>
+            <p>
+                Quando vamos nos descrever podemos usar diversas características, não?
+                Nome, idade, altura… enfim é para isso que os objetos servem: representar
+                uma coisa que possui várias características, ou melhor, atributos.
+            </p>
+            <br>
+            <p>
+                Além disso, nesse módulos também veremos outros dois importantes conceitos
+                da linguagem Javascript: <span style="color: #ffdd17">as condicionais e os loops</span>.
+            </p>
+            <br>
+            <p>
+                Para entender melhor uma condicional pense que é como se ela dissesse para a gente :
+                “Hey, se isso for verdade, faça isso. Do contrário, faça aquilo”.  Exemplificando:
+                “Opa, se você gosta de doce, come esse cupcake aqui 🧁. Se você não gosta, come essas batatinhas aqui! 🍟”
+            </p>
+            <br>
+            <p>
+                Agora para entender um loop é como se ele dissesse: “Enquanto isso for verdade,
+                continue fazendo essa ação”. De forma exemplificada: “Você ainda tá com fome? Então continua comendo”.
+            </p>
+            <br>
+            <p>
+                Após esse primeiro contato com todos esses conceitos novos, por que não praticarmos um pouco?
+            </p>
+            <p>
+                Então vamos lá !
+            </p>
+            <span style="color: #ffdd17"><p> (∩^o^)⊃━☆</p></span>
+
+
+        </div>
+        <a asp-controller="Home" asp-action="Aula4">
+            <div class="but-avancar">
+                <img class="but-rosa" src="~/img/but-rosa.png" alt="" />
+                <p class="text-but-avancar" href="">AVANÇAR</p>
+            </div>
+        </a>
+    </div>
+    <ul></ul>
+     <!-- JS-->
+    <script src="~/js/site.js"></script>
+
+</body>

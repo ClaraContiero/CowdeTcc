@@ -1,0 +1,62 @@
+/* Fontes importadas */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+/* Background animado */
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #06002E;
+    position: relative;
+}
+
+    body::-webkit-scrollbar {
+        width: 12px; /* da scrollbar inteira*/
+    }
+
+    body::-webkit-scrollbar-track {
+        background: #06002E; 
+    }
+
+    body::-webkit-scrollbar-thumb {
+        border-radius: 1px; /* arredondando */
+        border: 2px solid #ffdd17;
+    }
+
+li {
+    list-style: none;
+    display: block;
+    position: absolute;
+    /* onde a animação começa */
+    bottom: -150px;
+    animation: up 0.8s infinite alternate;
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-3000px) rotate(900deg);
+    }
+}
+
+/* Responsividade */
+@media only screen and (max-width: 600px) {
+    li {
+        list-style: none;
+        display: block;
+        position: absolute;
+        bottom: -937px;
+        animation: up 0.8s infinite alternate;
+    }
+}

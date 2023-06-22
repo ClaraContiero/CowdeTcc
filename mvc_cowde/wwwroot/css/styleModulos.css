@@ -1,0 +1,136 @@
+/* Fontes importadas */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+/* Background animado */
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #06002E;
+    position: absolute;
+}
+
+    /* Scrollbar */
+
+    body::-webkit-scrollbar {
+        width: 12px; 
+    }
+
+    body::-webkit-scrollbar-track {
+        background: #06002E; 
+    }
+
+    body::-webkit-scrollbar-thumb {
+        border-radius: 1px; 
+        border: 2px solid #ffdd17; 
+    }
+
+li {
+    list-style: none;
+    display: block;
+    position: absolute;
+    /* onde a animação começa */
+    bottom: -1500px;
+    animation: up 0.8s infinite alternate;
+
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-3000px) rotate(900deg);
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #2d2755;
+    height: 20%;
+    position: relative;
+    bottom: 0;
+    z-index: 5;
+    margin-top: 10%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid white;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+}
+
+.logo-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    margin-top: 50px;
+}
+
+.iconsImg {
+    width: 35px;
+    cursor: pointer;
+}
+
+    .iconsImg:hover {
+        scale: 1.05;
+    }
+
+
+.logoFoot {
+    width: 130px;
+    margin: 0;
+}
+
+.pFoot {
+    font-size: 12px;
+    font-family: "Courier Prime", monospace;
+    color: white;
+}
+
+.links {
+    font-family: "Press Start 2P", cursive;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+    .links a {
+        text-decoration: none;
+        color: white;
+    }
+
+        .links a:hover {
+            color: #c42172;
+            text-decoration: underline;
+        }
+
+hr {
+    height: 10px;
+    color: #8aeb27;
+}
+
+
+
+

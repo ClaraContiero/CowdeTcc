@@ -1,0 +1,89 @@
+@{
+    ViewData["Title"] = "Questionario";
+
+    <link rel="stylesheet" href="~/css/styleQuiz.css" />
+    <link rel="stylesheet" href="~/css/questionario.css" />
+    <link rel="stylesheet" href="~/css/nav.css" />
+}
+
+
+<body>
+    <ul></ul>
+    <!-- Background da navbar -->
+    <div class="nav-background">
+        <img class="img-background1" src="~/img/background.png" alt="" />
+        <img class="img-background2" src="~/img/background.png" alt="" />
+        <img class="img-background3" src="~/img/background.png" alt="" />
+    </div>
+
+    <!-- NavBar -->
+    <nav class="nav-bar">
+        <div class="elementos-nav">
+            <a asp-controller="Home" asp-action="Modulos">
+                <img class="logo_nav" src="~/img/logoCowde_ofc.png" alt="">
+            </a>
+
+            <div class="links-nav">
+                <a class="text-nav" asp-area="" asp-controller="Home" asp-action="Modulos">Modulos</a>
+            </div>
+            <div class="drop">
+                @{
+                    string nome = ViewBag.Avatar;
+                    string formato = "/img/avatares/" + nome;
+                }
+                <img class="perfil-img" src="@formato" alt="" />
+                <div class="drop-down_perfil">
+                    <a class="text-drop" asp-area="" asp-controller="Home" asp-action="Perfil" id="link1">Perfil</a>
+                    <a class="text-drop" asp-area="" asp-controller="Usuario" asp-action="Sair">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal" id="modalCerto">
+        <p class="x" onclick="fecharPopUp()">X</p>
+        <p class="titulo-modal">Hey!</p>
+        <p class="text-modal">Parabéns, você acertou! Continue assim.</p>
+        <img class="vaquinha" src="~/img/vaquinha_jennifer.png" alt="">
+    </div>
+
+    <div class="modal" id="modalErrado">
+        <p class="x" onclick="fecharPopUp()">X</p>
+        <p class="titulo-modal">Ahhh...</p>
+        <p class="text-modal">Você errou (T-T) Vai se sair melhor na próxima.</p>
+        <img class="vaquinha" src="~/img/vaquinha_jennifer.png" alt="">
+    </div>
+
+    <!-- Questionário -->
+    <div class="card" id="opacidade">
+        <div class="textos">
+            <p class="titulo">Vamos testar o que você aprendeu?</p>
+            <p class="pergunta">Como seria um loop (for) para o seguinte caso: uma pessoa come bolachas, mas ela para de comer ná sétima?</p>
+        </div>
+
+        <div class="alternativa">
+            <div class="alt" id="resp2" onclick="respostaErrada2()">
+                <p>a) for (var bolachas = 0; sheepCounted < 10; sheepCounted++)</p>
+            </div>
+            <div class="alt" id="resp1" onclick="respostaErrada1()">
+                <p>b) abadabaua uiii</p>
+            </div>
+            <div class="alt" id="respCerta" onclick="respostaCerta()">
+                <p>c) for (var bolachas = 0; sheepCounted < 7; sheepCounted++</p>
+            </div>
+            <div class="alt" id="resp3" onclick="respostaErrada3()">
+                <p>d) abadabaua uiii</p>
+            </div>
+
+            <div class="botoes">
+                <a asp-controller="Home" asp-action="Modulos">
+                    <button class="but-avancar">CONCLUIR</button>
+                </a>
+            </div>
+        </div>
+        <!-- Js -->
+        <script src="~/js/site.js"></script>
+        <script src="~/js/quiz_validacao.js"></script>
+    </div>
+</body>

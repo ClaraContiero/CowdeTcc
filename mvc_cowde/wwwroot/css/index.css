@@ -1,0 +1,284 @@
+/* Fontes importadas */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Conteúdo parte 1 */
+
+p {
+    word-wrap: break-word;
+    font-size: 25px;
+    line-height: 40px;
+}
+
+.conteudo {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 80px;
+    position: relative;
+    z-index: 5;
+    align-items: center;
+}
+
+.introducao {
+    font-family: "Press Start 2P", cursive;
+    color: white;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    max-width: 900px;
+    margin: auto auto;
+}
+
+.bicho-lousinha {
+    margin-top: 180px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.vaquinha {
+    width: 250px;
+    display: inline-block;
+    position: absolute;
+    margin-right: 400px;
+}
+
+    .vaquinha:hover {
+        scale: 1.02;
+    }
+
+.coelhinho {
+    width: 250px;
+    display: inline-block;
+    position: absolute;
+    margin-right: 400px;
+}
+
+    .coelhinho:hover {
+        scale: 1.02;
+    }
+
+.pintinho {
+    width: 250px;
+    display: inline-block;
+    position: absolute;
+    margin-right: 400px;
+}
+
+    .pintinho:hover {
+        scale: 1.02;
+    }
+
+.lousinha {
+    width: 400px;
+}
+
+.texto-lousa {
+    font-family: "Press Start 2P", cursive;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    text-align: center;
+    font-size: 18px;
+    max-width: 300px;
+    word-wrap: break-word;
+    margin-bottom: 7.5%;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 180px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Conteúdo parte 2 */
+
+.text-parceiros {
+    font-family: "Press Start 2P", cursive;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    margin-top: 180px;
+}
+
+.parceiros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    background-color: #28015c;
+    height: 350px;
+    margin-top: 180px;
+   
+}
+
+.parceiro-img {
+    width: 350px;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 452px;
+    }
+}
+
+.mobile-demo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    position: relative;
+    z-index: 5;
+   
+}
+
+    .mobile-demo-img {
+        width: 450px;
+    }
+
+    .mobile-demo p {
+        font-family: "Press Start 2P", cursive;
+        color: white;
+        font-size: 22px;
+        max-width: 600px;
+        text-align: center;
+    }
+
+.vaquinha-mob {
+    width: 250px;
+}
+
+.p-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Menu Hamburger */
+.topnav {
+    overflow: hidden;
+    background-color: #06002e;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    display: none;
+}
+
+.a-link {
+    text-align: center;
+    width: auto;
+}
+
+.topnav #myLinks {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.topnav a {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+    font-family: "Press Start 2P", cursive;
+}
+
+    .topnav a.icon {
+        background: #06002e;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        align-items: center;
+    }
+
+    .topnav a:hover {
+        background-color: #c42172;
+        color: rgb(255, 255, 255);
+        transition: 0.3s;
+    }
+
+.logoHambger {
+    width: 120px;
+    align-content: center;
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+    p {
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    .pintinho {
+        width: 200px;
+        display: inline-block;
+        position: absolute;
+        margin: auto auto;
+    }
+
+    .lousinha {
+        display: none;
+    }
+
+    .texto-lousa {
+        display: none;
+    }
+
+    .coelhinho {
+        display: none;
+    }
+
+    .introducao {
+        margin-top: 210px;
+    }
+
+    .parceiro-img {
+        width: 200px;
+    }
+
+    /* Do menu */
+    .topnav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        box-shadow: 1px 2px 30px 3px #060004;
+    }
+
+    #mylinks {
+        align-items: center;
+        justify-content: center;
+        width: auto;
+    }
+
+    .texto {
+        font-size: 10px;
+    }
+
+    .nav-background {
+        display: flex;
+        margin-top: 18%;
+    }
+
+    .nav-position {
+        display: none;
+    }
+}

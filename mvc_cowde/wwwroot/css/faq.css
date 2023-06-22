@@ -1,0 +1,96 @@
+/* Fontes importadas */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+.text-faq {
+    margin-top: 10px;
+    font-family: "Press Start 2P", cursive;
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+
+.faq-heading {
+    border-bottom: #777;
+    padding: 20px 60px;
+}
+
+.faq-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 5;
+    margin-top: 180px;
+}
+
+.hr-line {
+    width: 60%;
+    height: auto;
+    margin: auto;
+}
+/* Botão que abre e fecha o faq*/
+.faq-page {
+    font-family: "Press Start 2P", cursive;
+    font-weight: 1;
+    font-size: 15px;
+    color: #ffff;
+    cursor: pointer;
+    padding: 25px 20px;
+    width: 60%;
+    border: none;
+    outline: none;
+    transition: 0.5s;
+    margin: auto;
+    line-height: 25px;
+}
+
+.faq-body {
+    margin: auto;
+    width: 50%;
+    padding: auto;
+    color: #f9f9f9;
+    font-family: "Press Start 2P", cursive;
+    font-size: 5px;
+}
+
+.faq-p {
+    font-family: "Press Start 2P", cursive;
+    font-size: 10px;
+    font-weight: 100;
+}
+
+
+.active,
+.faq-page:hover {
+    background-color: #28015c;
+}
+
+/* painel do faq*/
+.faq-body {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+}
+
+.faq-page:after {
+     /* Unicode (+) */
+    content: "\02795";  
+    color: #ffffff;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+     /* Unicode (-) */
+    content: "\2796";
+}
+
+@media screen and (max-width: 600px) {
+    .faq-page {
+        font-size: 12px;
+    }
+
+    .faq-body {
+        font-size: 2px;
+    }
+}

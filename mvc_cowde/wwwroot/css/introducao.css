@@ -1,0 +1,271 @@
+/* Fontes importadas */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+body {
+    position: absolute;
+}
+
+.container {
+    margin: auto auto;
+}
+
+.titulo {
+    color: #3bff14;
+    font-family: "Press Start 2P", cursive;
+    font-size: 25px;
+    text-align: center;
+
+    overflow: hidden;
+    border-right: 10px solid white;
+    white-space: nowrap;
+    margin: auto auto;
+    letter-spacing: normal;
+    animation: typing 1.5s steps(15, end), blink-caret .75s step-end infinite;
+}
+
+/* Efeito de digitação */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 90%
+    }
+}
+
+/* Efeito do cursor*/
+@keyframes blink-caret {
+
+    from, to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: white
+    }
+}
+
+.x {
+    color: white;
+    font-family: "Press Start 2P", cursive;
+    font-size: 30px;
+    margin-left: 39vw;
+    margin-bottom: 2px;
+}
+
+    .x:hover {
+        cursor: pointer;
+        color: rgb(212, 208, 208);
+        scale: 0.99;
+    }
+
+a {
+    text-decoration: none;
+}
+
+
+.texto {
+    color: white;
+    font-family: "Press Start 2P", cursive;
+    font-size: 12px;
+    line-height: 3vh;
+    text-align: justify;
+    padding-left: 5vh;
+    padding-right: 5vh;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    position: relative;
+    z-index: 5;
+    background-color: #2d2755;
+    border: 3px solid #ffffff;
+    border-radius: 2px;
+    margin-left: 28vw;
+    margin-right: 28vw;
+    margin-top: 35px;
+    gap: 50px;
+}
+
+.but-avancar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 32vw;
+}
+
+.but-rosa {
+    width: 120px;
+    display: inline-block;
+    position: relative;
+}
+
+.text-but-avancar {
+    color: #ffffff;
+    font-family: "Press Start 2P", cursive;
+    text-decoration: none;
+    font-size: 12px;
+    position: absolute;
+    margin-top: -35px;
+}
+
+.but-avancar:hover {
+    scale: 1.04;
+}
+
+
+
+/*DropDown*/
+
+.perfil-img {
+    width: 50px;
+    border-radius: 100%;
+    border: 2px solid white;
+    background-color: #0c053b;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+.drop-down_perfil {
+    background-color: #2d2755;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    border: 2px solid white;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 65px;
+    right: 310px;
+    z-index: 5;
+    margin: 0;
+}
+
+.drop:hover .drop-down_perfil {
+    display: flex;
+    cursor: pointer;
+}
+
+.text-drop {
+    font-family: "Courier Prime", monospace;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+    .text-drop:hover {
+        color: #ff148a;
+        text-decoration: underline;
+    }
+
+/* Menu Hamburger */
+.topnav {
+    overflow: hidden;
+    background-color: #06002e;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    display: none;
+}
+
+.a-link {
+    text-align: center;
+    width: auto;
+}
+
+.topnav #myLinks {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.topnav a {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+    font-family: "Press Start 2P", cursive;
+}
+
+    .topnav a.icon {
+        background: #06002e;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        align-items: center;
+    }
+
+    .topnav a:hover {
+        background-color: #c42172;
+        color: rgb(255, 255, 255);
+        transition: 0.3s;
+    }
+
+.logoHambger {
+    width: 120px;
+    align-content: center;
+}
+
+/* Responsividade */
+@media screen and (min-width: 300px) and (max-width: 700px) {
+
+    /* Do menu */
+    .topnav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        box-shadow: 1px 2px 30px 3px #060004;
+    }
+
+    #mylinks {
+        align-items: center;
+        justify-content: center;
+        width: auto;
+    }
+
+    .texto {
+        font-size: 10px;
+    }
+
+    .card {
+        margin-top: 42%;
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+
+    .but-avancar {
+        margin: auto auto;
+    }
+
+    .nav-background {
+        display: flex;
+        margin-top: 18%;
+    }
+
+    .nav-position {
+        display: none;
+    }
+
+    .titulo {
+        margin-top: 22%;
+        font-size: 20px;
+    }
+
+    .x {
+        display: none;
+    }
+      
+}
+
+

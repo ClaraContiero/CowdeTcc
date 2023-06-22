@@ -1,0 +1,125 @@
+﻿/* Fontes importadas */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+/* Logo */
+
+body {
+    position: fixed;
+}
+
+.logo_cowde {
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    margin: auto auto;
+    justify-content: center;
+    position: relative;
+}
+
+/* Login */
+.forms {
+    display: grid;
+    justify-content: center;
+    gap: 5px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    gap: 15px;
+}
+
+.input_label {
+    color: white;
+    transition: (all 0.3s);
+    font-family: 'Press Start 2P', cursive;
+}
+
+.input_field {
+    background-color: transparent;
+    border: 0.5px solid rgb(255, 255, 255);
+    line-height: 35px;
+    width: 50vh;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    padding-left: 10px;
+}
+
+/* Botão e link para cadastro */
+.but_login {
+    line-height: 35px;
+    margin-top: 40px;
+    position: relative;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #E12F88;
+    color: white;
+    border: none;
+}
+
+    .but_login:hover {
+        background-color: #c42172;
+        scale: 1.01;
+    }
+
+.link_cadastro {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    padding-top: 10px;
+    position: relative;
+}
+
+.link {
+    color: #FFDD17;
+}
+
+    .link:hover {
+        color: #E12F88;
+    }
+
+/* Posição geral dos elementos */
+.elementos {
+    padding: 80px;
+}
+
+/* Imagem */
+.pintin {
+    width: 25vh;
+    position: absolute;
+    right: 0.8vh;
+    margin-bottom: 25px;
+}
+
+
+/* Responsividade */
+@media only screen and (max-width: 600px) {
+    .logo_cowde {
+        width: 200px;
+        display: flex;
+        flex-direction: row;
+        margin: auto auto;
+        justify-content: center;
+        position: relative;
+    }
+
+    .input_field {
+        width: 35vh;
+    }
+
+    .input_label {
+        font-size: 14px;
+    }
+
+    .link_cadastro {
+        font-size: 9px;
+        line-height: 14px;
+    }
+
+    .pintin {
+        width: 18vh;
+        position: absolute;
+    }
+}

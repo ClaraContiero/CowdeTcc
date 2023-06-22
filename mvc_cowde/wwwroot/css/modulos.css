@@ -1,0 +1,501 @@
+body {
+    position: relative;
+}
+
+.container {
+    align-items: center;
+    justify-content: center;
+}
+
+/* Topo */
+
+.titulo {
+    justify-content: center;
+    align-items: center;
+}
+
+.pigPunk {
+    width: 290px;
+    position: relative;
+    z-index: 5;
+}
+
+    .pigPunk:hover {
+        scale: 1.02;
+    }
+
+.title {
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    font-family: "Press Start 2P", cursive;
+    align-items: center;
+    text-align: center;
+    font-size: 35px;
+    position: relative;
+    top: 100px;
+    z-index: 5;
+    max-width: fit-content;
+    overflow: hidden;
+    border-right: 10px solid white;
+    white-space: nowrap;
+    margin: auto auto;
+    letter-spacing: normal;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+/* Efeito de digitação */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 70%
+    }
+}
+
+/* Efeito do cursor*/
+@keyframes blink-caret {
+
+    from, to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: white;
+    }
+}
+
+.but-progresso {
+    background-color: #ffdd17;
+    font-family: "Press Start 2P", cursive;
+    font-size: 12px;
+    width: 300px;
+    height: 50px;
+    border: none;
+    border-radius: 2px;
+    position: relative;
+    z-index: 5;
+    margin-left: 42%;
+    margin-top: 150px;
+}
+
+    .but-progresso:hover {
+        scale: 1.02;
+        background-color: #e2c103;
+        cursor: pointer;
+    }
+
+.but-progresso1 {
+    background-color: #ffdd17;
+    font-family: "Press Start 2P", cursive;
+    font-size: 12px;
+    width: 300px;
+    height: 50px;
+    border: none;
+    border-radius: 2px;
+    position: relative;
+    z-index: 5;
+    margin-left: 42%;
+    margin-top: 250px;
+}
+
+    .but-progresso1:hover {
+        scale: 1.02;
+        background-color: #e2c103;
+        cursor: pointer;
+    }
+
+.but-progresso2 {
+    background-color: #ffdd17;
+    font-family: "Press Start 2P", cursive;
+    font-size: 12px;
+    width: 300px;
+    height: 50px;
+    border: none;
+    border-radius: 2px;
+    position: relative;
+    z-index: 5;
+    margin-left: 42%;
+    margin-top: 250px;
+}
+
+    .but-progresso2:hover {
+        scale: 1.02;
+        background-color: #e2c103;
+        cursor: pointer;
+    }
+
+.btn-progresso {
+    background-color: #ffdd17;
+    font-family: "Press Start 2P", cursive;
+    font-size: 12px;
+    width: 60%;
+    height: 50px;
+    left: 40%;
+    border: none;
+    border-radius: 2px;
+    position: relative;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+    .btn-progresso:hover {
+        scale: 1.02;
+        background-color: #e2c103;
+        cursor: pointer;
+    }
+
+/* Módulos */
+
+.mod-geral {
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    margin-top: 150px;
+}
+
+.modulos {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.mod {
+    border: 3px solid white;
+    border-radius: 2px;
+    align-items: center;
+    justify-content: center;
+    font-family: "Press Start 2P", cursive;
+    font-size: 15px;
+    padding: 20px;
+}
+
+.cardzin {
+    background-color: #2d2755;
+    border: 3px solid white;
+    width: 500px;
+    height: 60px;
+    border-radius: 2px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+    .cardzin:hover {
+        scale: 1.01;
+        background-color: #3d337c;
+        animation-duration: 1.02s;
+        cursor: pointer;
+    }
+
+.text-cardzin {
+    color: white;
+    padding-top: 2%;
+    padding-left: 3%;
+}
+
+.titulo-card {
+    font-family: "Press Start 2P", cursive;
+    color: white;
+    padding-left: 3%;
+    padding-bottom: 1%;
+}
+
+.link-aulas {
+    text-decoration: none;
+}
+
+.mod1 {
+    border: 3px solid white;
+    background-color: #2d2755;
+    border-radius: 2px;
+    font-family: "Press Start 2P", cursive;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    padding: 20px;
+    width: 1090px;
+    height: 300px;
+    margin: auto auto;
+    margin-top: 30px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    z-index: 5;
+}
+
+/* Barrinha de progresso */
+
+.barra-progresso {
+    height: 40px;
+    padding: 0;
+    border-radius: 2px;
+    margin-top: 30px;
+    background-color: #FFFFFF;
+    display: flex;
+    margin-left: 200px;
+    --progresso: 0;
+}
+
+    .barra-progresso::before {
+        border-radius: 2px;
+        content: "";
+        width: calc(var(--progresso) * 1%);
+        background-color: hsl(calc(var(--progresso) *1.2), 80%, 50%);
+        transition: all 0.2s ease;
+    }
+
+
+/*DropDown*/
+.perfil-img {
+    width: 50px;
+    border-radius: 100%;
+    border: 2px solid white;
+    background-color: #0c053b;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+.drop-down_perfil {
+    background-color: #2d2755;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    border: 2px solid white;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 65px;
+    right: 310px;
+    z-index: 5;
+    margin: 0;
+}
+
+.drop:hover .drop-down_perfil {
+    display: flex;
+    cursor: pointer;
+}
+
+.text-drop {
+    font-family: "Courier Prime", monospace;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+    .text-drop:hover {
+        color: #ff148a;
+        text-decoration: underline;
+    }
+
+
+/* Menu Hamburger */
+.topnav {
+    overflow: hidden;
+    background-color: #06002e;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    display: none;
+}
+
+.a-link {
+    text-align: center;
+    width: auto;
+}
+
+.topnav #myLinks {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.topnav a {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+    font-family: "Press Start 2P", cursive;
+}
+
+    .topnav a.icon {
+        background: #06002e;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        align-items: center;
+    }
+
+    .topnav a:hover {
+        background-color: #c42172;
+        color: rgb(255, 255, 255);
+        transition: 0.3s;
+    }
+
+.logoHambger {
+    width: 120px;
+    align-content: center;
+}
+
+
+.title-responsive {
+    display: none;
+}
+
+
+/* Responsividade */
+@media screen and (min-width: 300px) and (max-width: 700px) {
+    /* Do menu */
+    .topnav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        box-shadow: 1px 2px 30px 3px #060004;
+    }
+
+    #mylinks {
+        align-items: center;
+        justify-content: center;
+        width: auto;
+    }
+
+    .nav-background {
+        display: flex;
+        margin-top: 18%;
+    }
+
+    .nav-position {
+        display: none;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .title-responsive {
+        line-height: 35px;
+        font-size: 20px;
+        display: flex;
+        color: white;
+        font-family: "Press Start 2P", cursive;
+        margin-left: 5%;
+        margin-right: 5%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .but-progresso {
+        font-size: 10px;
+        width: 200px;
+        line-height: 20px;
+        height: 50px;
+        margin-left: 25%;
+        margin-top: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mod-geral {
+        width: auto;
+        margin-top: 10%;
+    }
+
+    .modulos {
+        flex-direction: column;
+    }
+
+    .mod {
+        border: 3px solid white;
+        border-radius: 2px;
+        align-items: center;
+        justify-content: center;
+        font-family: "Press Start 2P", cursive;
+        font-size: 15px;
+        padding: 20px;
+    }
+
+    .cardzin {
+        width: auto;
+        height: auto;
+    }
+
+    .text-cardzin {
+        font-size: 12px;
+    }
+
+    .titulo-card {
+        font-size: 13px;
+    }
+
+    .barra-progresso {
+        height: 30px;
+        width: 100px;
+        padding: 0;
+        border-radius: 2px;
+        margin-top: 30px;
+        background-color: #ffffff;
+        display: flex;
+        margin-left: 200px;
+        --progresso: 90;
+    }
+
+    .mod1 {
+        font-size: 15px;
+        width: auto;
+        height: 300px;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 30px;
+        flex-direction: column;
+        text-align: center;
+        line-height: 25px;
+    }
+
+    .pigPunk {
+        width: 200px;
+    }
+
+    /* Do menu */
+    .topnav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        box-shadow: 1px 2px 30px 3px #060004;
+    }
+
+    #mylinks {
+        align-items: center;
+        justify-content: center;
+        width: auto;
+    }
+
+    .texto {
+        font-size: 10px;
+    }
+
+    .nav-background {
+        display: flex;
+        margin-top: 18%;
+    }
+
+    .nav-position {
+        display: none;
+    }
+
+    .container {
+        margin-top: 70%;
+    }
+}

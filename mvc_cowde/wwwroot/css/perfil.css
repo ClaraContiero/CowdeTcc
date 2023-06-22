@@ -1,0 +1,491 @@
+.telinhas {
+    display: flex;
+    flex-direction: row;
+    margin-top: 35px;
+    position: relative;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #2D2755;
+    width: 550px;
+    height: 550px;
+    border: 3px solid white;
+    border-radius: 2px;
+    
+}
+
+.perfil-update {
+    display: none;
+    flex-direction: column;
+    background-color: #2D2755;
+    width: 550px;
+    height: auto;
+    border: 3px solid white;
+    border-radius: 2px;
+    align-items: center;
+    padding-bottom: 25px;
+    
+}
+
+.forms {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    gap: 20px;
+}
+
+.input_label {
+    color: white;
+    transition: (all 0.3s);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+}
+
+.input_field {
+    background-color: transparent;
+    border: 0.5px solid rgb(255, 255, 255);
+    line-height: 35px;
+    width: 450px;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    padding-left: 10px;
+}
+
+.usuario-perfil-editar {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2px;
+    align-items: center;
+    margin-top: 75px;
+}
+
+.editar-foto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.editar-foto2 {
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+    justify-content: center;
+}
+
+
+.lapis-editar {
+    background-color: #FFDD17;
+    width: 50px;
+    height: 45px;
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    position: relative;
+    margin-top: 130px;
+    margin-left: -45px;
+}
+
+.lapis-editar:hover {
+    background-color: #e2c103;
+    scale: 1.03;
+}
+
+.nome-usuario {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 20px;
+    max-width: fit-content;
+
+    overflow: hidden;
+    border-right: 10px solid white;
+    white-space: nowrap;
+    letter-spacing: normal;
+    animation:
+        typing 2.5s steps(30, end),
+        blink-caret .75s step-end infinite;
+}
+
+/* Efeito de digitação */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 70%
+    }
+}
+
+/* Efeito do cursor*/
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: white;
+    }
+}
+
+
+.usuario {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 12px;
+}
+
+.but-editar-perfil {
+    width: 300px;
+    line-height: 35px;
+    margin-top: 25px;
+    position: relative;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #FFDD17;
+    color: #06002E;
+    border: none;
+}
+
+.but-editar-perfil:hover {
+    background-color: #e2c103;
+    scale: 1.01;
+}
+
+.but-salvar {
+    width: 300px;
+    line-height: 35px;
+    margin-top: 25px;
+    position: relative;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #E12F88;
+    color: #ffff;
+    border: none;
+}
+
+.but-salvar:hover {
+    background-color: #c42172;
+    scale: 1.01;
+}
+
+.progressos {
+    display: flex;
+    flex-direction: column;
+    gap: 45px
+}
+
+
+.progresso-geral, .modulos-conc  {
+    background-color: #06002E;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #8AEB27;
+    border-radius: 2px;
+    width: 350px;
+    height: 250px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.modulos-conc {
+    border: 3px solid #FF148A;
+
+}
+
+.progresso, .modulos {
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    margin-top: 50px;
+}
+
+.porc-geral, .mod-conc {
+    color: #FFDD17;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 70px;
+    margin-top: 20px;
+}
+
+.avatares input {
+    display: none;
+}
+
+input[type=radio]:checked + .opc_avatar {
+    border-radius: 2px;
+    border: 3px dashed red;
+    cursor: pointer;
+}
+
+.avatares {
+    display: none;
+    border-radius: 2px;
+    flex-direction: row;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    position: relative;
+    z-index: 5;
+    gap: 20px;
+}
+
+.img-avat {
+    border-radius: 2px;
+    background-color: #06002E;
+    display: flex;
+    padding: 5px;
+    width: 100px;
+}
+
+
+.img-avat-principal {
+    border-radius: 100%;
+    border: 3px solid white;
+    background-color: #06002E;
+    padding: 5px;
+    width: 180px;
+    margin-bottom: 35px;
+}
+
+
+.drop-down_perfil {
+    background-color: #2d2755;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    border: 2px solid white;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 65px;
+    right: 310px;
+    z-index: 5;
+    margin: 0;
+}
+
+.drop:hover .drop-down_perfil {
+    display: flex;
+    cursor: pointer;
+}
+
+.text-drop {
+    font-family: "Courier Prime", monospace;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+    .text-drop:hover {
+        color: #ff148a;
+        text-decoration: underline;
+    }
+
+/*DropDown*/
+
+.perfil-img {
+    width: 50px;
+    border-radius: 100%;
+    border: 2px solid white;
+    background-color: #0c053b;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+.drop-down_perfil {
+    background-color: #2d2755;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    border: 2px solid white;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 65px;
+    right: 310px;
+    z-index: 5;
+    margin: 0;
+}
+
+.drop:hover .drop-down_perfil {
+    display: flex;
+    cursor: pointer;
+}
+
+.text-drop {
+    font-family: "Courier Prime", monospace;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+    .text-drop:hover {
+        color: #ff148a;
+        text-decoration: underline;
+    }
+
+/* Menu Hamburger */
+.topnav {
+    overflow: hidden;
+    background-color: #06002e;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    display: none;
+}
+
+.a-link {
+    text-align: center;
+    width: auto;
+}
+
+.topnav #myLinks {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.topnav a {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+    font-family: "Press Start 2P", cursive;
+}
+
+    .topnav a.icon {
+        background: #06002e;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        align-items: center;
+    }
+
+    .topnav a:hover {
+        background-color: #c42172;
+        color: rgb(255, 255, 255);
+        transition: 0.3s;
+    }
+
+.logoHambger {
+    width: 120px;
+    align-content: center;
+}
+
+/* Responsividade */
+@media screen and (min-width: 300px) and (max-width: 700px) {
+    /* Do menu */
+    .topnav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        box-shadow: 1px 2px 30px 3px #060004;
+    }
+
+    #mylinks {
+        align-items: center;
+        justify-content: center;
+        width: auto;
+    }
+
+    .texto {
+        font-size: 10px;
+    }
+
+    .card {
+        margin-top: 15vh;
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+
+    .but-avancar {
+        margin: auto auto;
+    }
+
+    .nav-background {
+        display: flex;
+        margin-top: 18%;
+    }
+
+    .nav-position {
+        display: none;
+    }
+
+    /* Perfil */
+    .telinhas {
+        flex-direction: column;
+        margin-top: 30%;
+        gap: 50px;
+    }
+
+    .perfil {
+        width: auto;
+        height: auto;
+        padding: 10% 5% 10% 5%;
+    }
+
+    .perfil-update {
+        width: auto;
+        height: auto;
+        padding: 10% 5% 10% 5%;
+    }
+
+    .forms {
+        margin-top: 30px;
+    }
+
+    .input_field {
+        width: auto;
+    }
+
+    .but-salvar {
+        width: auto;
+    }
+
+    .but-editar-perfil {
+        width: auto;
+    }
+
+    .nome-usuario {
+        font-size: 18px;
+    }
+
+    .progresso-geral, .modulos-conc {
+        width: auto;
+    }
+
+    .progresso, .modulos {
+        font-size: 12px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .porc-geral, .mod-conc {
+        font-size: 50px;
+        margin-top: 20px;
+    }
+
+}

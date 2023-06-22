@@ -1,0 +1,361 @@
+﻿
+@{
+    ViewData["Title"] = "Dados e varáveis";
+    <link rel="stylesheet" href="~/css/editor-style.css" />
+    <link rel="stylesheet" href="~/css/nav.css" />
+    <link rel="stylesheet" href="~/css/styleAula.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+}
+
+
+
+<body>
+
+    <!--Background da navbar-->
+    <div class="nav-background">
+        <img class="img-background1" src="~/img/background.png" alt="" />
+        <img class="img-background2" src="~/img/background.png" alt="" />
+        <img class="img-background3" src="~/img/background.png" alt="" />
+    </div>
+
+
+    <!-- NavBar -->
+    <nav class="nav-bar">
+        <div class="elementos-nav">
+            <a asp-controller="Home" asp-action="Modulos">
+                <img class="logo_nav" src="~/img/logoCowde_ofc.png" alt="">
+            </a>
+
+            <div class="links-nav">
+                <a class="text-nav" asp-area="" asp-controller="Home" asp-action="Modulos">Modulos</a>
+            </div>
+            <div class="drop">
+                @{
+                    string nome = ViewBag.Avatar;
+                    string formato = "/img/avatares/" + nome;
+                }
+                <img class="perfil-img" src="@formato" alt="" />
+                <div class="drop-down_perfil">
+                    <a class="text-drop" asp-area="" asp-controller="Home" asp-action="Perfil" id="link1">Perfil</a>
+                    <a class="text-drop" asp-area="" asp-controller="Usuario" asp-action="Sair">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hamburger Responsivo -->
+    <div class="topnav">
+        <a asp-controller="Home" asp-action="Modulos">
+            <img class="logoHambger" src="~/img/logoCowde_ofc.png" alt="" />
+        </a>
+        <div id="myLinks">
+            <a class="a-link" asp-area="" asp-controller="Home" asp-action="Modulos">Módulos</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="Burger()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <!-- Código pra ocultar os links e também o menu -->
+    <script>
+        function Burger() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+        var nav = document.querySelector(".topnav").style.display;
+        if ((nav.style.display = "flex")) {
+            Burger();
+        }
+    </script>
+
+
+
+
+    <!-- Ajuda Pop-Up -->
+
+    <img id="but-ajuda" onclick="ajuda()" src="~/img/botaoUquee.png" alt="">
+    <div class="modal-ajuda" id="modal">
+        <div class="modalX">
+            <div class="elementosGeral">
+                <p class="x" onclick="fecharPopUp()">X</p>
+                <div class="elementos">
+                    <p class="text-modal">• Esse é o editor, onde você vai digitar seu código!</p>
+                    <img class="img" src="~/img/editorTxt.png" alt="">
+                    <p class="text-modal">
+                        • Esses são os botões. O amarelo vai fazer seu código funcionar, e o rosa vai limpar
+                        tudo
+                        o que estiver na tela. Cuidado!
+                    </p>
+                    <img class="botoes-img" src="~/img/botoes.png" alt="">
+                </div>
+                <div class="elementos">
+                    <p class="text-modal">• Este é o campo que vai mostrar o que você deve digitar.</p>
+                    <img class="img" src="~/img/dica.png" alt="">
+                    <p class="text-modal">• E é aqui que vão aparecer seus resultados!</p>
+                    <img class="img" src="~/img/saida.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Pop-up contra copiar e colar-->
+    <div class="modal" id="modal-colar">
+        <p class="x" onclick="fecharPopUp2()">X</p>
+        <p class="titulo-modal">Epa!</p>
+        <p class="text-modal">Tente digitar ao invés de copiar e colar, garantimos que seu aprendizado será melhor!</p>
+        <img class="vaquinha" src="~/img/pintin.png" alt="">
+    </div>
+
+    <main id="opacidade">
+        <div class="card-text">
+            <p class="titulo">
+                <span style="color: #3bff14">2. Variáveis:</span> como funcionam?
+            </p>
+
+
+            <!-- parte 1 -->
+            <div id="aula-pt1">
+                <p class="texto">
+                    Como usar variáveis 🐳
+                </p>
+                <p class="texto">
+                    Uma variável é como uma caixa. Dentro dessa caixa, você pode guardar qualquer coisa que quiser: um número, um texto, entre outras coisas.
+                </p>
+                <p class="texto">
+                    Vamos imaginar um cofre em formato de porquinho 🐖. Quantas moedas você quer guardar dentro dele? Eu vou guardar 5 moedas.
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var cofrinho = 5;<br>
+                    console.log("Meu cofrinho possui " + cofrinho + " moedas");
+                </p>
+                <p class="texto">
+                    Ah, é! Percebeu que colocamos um + na nossa frase? Ele faz uma coisinha engraçada que chamamos de “concatenar”
+                    (tente dizer essa palavra várias vezes e bem rápido), que é juntar as informações, como um trem puxando vários vagões com cargas diferentes.
+                </p>
+                <p class="texto">
+                    Agora tente isso:
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var resposta = "Meu filme favorito é"; <br>
+                    var filme = prompt("Qual é seu filme favorito?"); <br>
+                    console.log(resposta + filme);
+                </p>
+                <p class="texto">
+                    Lembre-se que uma string deve estar sempre entre aspas, ok?
+                </p>
+
+
+                <div class="butns">
+                    <button class="btn-avancar" id="butAvan" onclick="avancar_conteudo1()">AVANÇAR</button>
+                </div>
+            </div>
+
+            <!-- parte 2 -->
+            <div id="aula-pt2">
+                <p class="texto">
+                    Variáveis usando matemática 👽.
+                </p>
+                <p class="texto">
+                    Se lembra quando fizemos cálculos matemáticos com o JavaScript?
+                    Vamos fazer a mesma coisa agora, mas iremos guardar nossos números em uma variável, veja:
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var num1 = 10;<br>
+                    var num2 = 5;
+                </p>
+                <p class="texto">
+                    Podemos fazer qualquer cálculo com essas variáveis.
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var num1 = 10; <br>
+                    var num2 = 5; <br>
+                    <br>
+                    //SOMA<br>
+                    console.log(num1 + num2);<br>
+                    <br>
+                    //SUBTRAÇÃO <br>
+                    console.log(num1 - num2); <br>
+                    <br>
+                    //DIVISÃO<br>
+                    console.log(num1 / num2);<br>
+                    <br>
+                    //MULTIPLICAÇÃO<br>
+                    console.log(num1 * num2);
+                </p>
+                <p class="texto">
+                    Você também poderia fazer o seguinte:
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var num1 = prompt("Entre com um número.");<br>
+                    var num2 = prompt("Entre com outro número.");<br>
+                    var resultado = "O resultado é " + (parseInt(num1) + parseInt(num2));<br>
+
+                    console.log(resultado);
+                </p>
+                <p class="texto">
+                    Não esqueça que o sinal da soma (+) é igual aquele que junta as informações, o trem, lembra?
+                    Por isso, se for somar alguns números, precisa usar um parseInt antes deles, certo? Ele vai transformar o texto em um número, apenas isso.
+                </p>
+                <p class="texto">
+                    Mas não precisa usar isso com as outras operações, veja:
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var num1 = prompt("Entre com um número.");<br>
+                    var num2 = prompt("Entre com outro número.");<br>
+                    var resultado = "O resultado é " + num1 * num2;<br>
+                    <br>
+                    console.log(resultado);
+                </p>
+                <p class="texto">
+                    Agora, pense o seguinte. Nós envelhecemos ano após ano, e sempre acrescentamos o número 1 na nossa idade atual, né? Vamos testar:
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var idade = 0;<br>
+                    console.log(++idade);
+                </p>
+                <p class="texto">
+                    Perceba que agora, sua idade vai aumentando, pois acrescentamos um ++ antes da nossa variável. Coloque o console.log(++idade) mais três vezes, assim:
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var idade = 0;<br>
+                    console.log(++idade);<br>
+                    console.log(++idade);<br>
+                    console.log(++idade);<br>
+                    console.log(++idade);
+                </p>
+                <p class="texto">
+                    Finja que está voltando no tempo agora e diminua sua idade.
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var idade = prompt("Digite sua idade.");<br>
+                    console.log(--idade);<br>
+                    console.log(--idade);<br>
+                    console.log(--idade);<br>
+                    console.log(--idade);
+                </p>
+                <p class="texto">
+                    🚀🚀🚀
+                </p>
+
+
+                <div class="butns">
+                    <button class="btn-voltar" onclick="voltar_conteudo1()">VOLTAR</button>
+                    <button class="btn-avancar" id="butAvan" onclick="avancar_conteudo2()">AVANÇAR</button>
+                </div>
+            </div>
+
+
+            <!-- parte 3 -->
+
+            <div id="aula-pt3">
+                <p class="texto">
+                    Qual o tamanho do seu nome? 🐘
+                </p>
+                <p class="texto">
+                    Podemos medir o tamanho de uma string, sabia? E é bem simples, basta escrever .length ao lado da palavra.
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var meuNome = prompt("Seu nome");<br>
+                    console.log("Seu nome tem " + meuNome.length + " letras");
+                </p>
+                <p class="texto">
+                    Consegue se lembrar de alguma palavra realmente grande? Vou te dar um exemplo:
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    //Quantas letras você acha que essa palavra tem?<br>
+                    var palavra = "pneumoultramicroscopicossilicovulcano<br>coniótico";<br>
+                    console.log(palavra.length);
+                </p>
+                <p class="texto">
+                    Só por curiosidade: essa é a maior palavra da língua portuguesa!
+                </p>
+                <p class="texto">
+                    ＼（〇_ｏ）／
+                </p>
+                <p class="texto">
+                    Pra finalizar os tipos de dados, vamos falar sobre o boolean. Por exemplo, você gosta de brócolis, verdadeiro ou falso?
+                </p>
+                <p class="texto">
+                    Eu gosto, então ficaria:
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var gostoBrocolis = true;<br>
+                    console.log(gostoBrocolis);
+                </p>
+                <p class="texto">
+                    Quando estamos usando um boolean, podemos fazer comparações entre as frases.
+                    Vamos usar o exemplo do brócolis de novo. Eu gosto de brócolis, mas não gosto de cenoura.
+                    Logo, você poderia me perguntar “Você gosta de brócolis e cenoura?”, mas apenas uma delas é verdade.
+                </p>
+                <p class="texto">
+                    Então vamos fazer isso aqui:
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var gostoBrocolis = true;<br>
+                    var gostoCenoura = false;<br>
+                    <br>
+                    console.log(gostoBrocolis && gostoCenoura);
+                </p>
+                <p class="texto">
+                    Perceba que usamos duas vezes o &&, e ele significa apenas “e”. Como não gosto das duas coisas, a resposta que aparece é “false”
+                </p>
+                <p class="texto">
+                    Mas se me perguntasse “Você gosta de brócolis ou cenoura?”, usaríamos um símbolo diferente, este aqui ||. Qual resposta apareceu?
+                </p>
+                <p class="texto-teste" id="texto-aula">
+                    var gostoBrocolis = true;<br>
+                    var gostoCenoura = false;<br>
+                    <br>
+                    console.log(gostoBrocolis || gostoCenoura);
+                </p>
+                <div class="butns">
+                    <button class="btn-voltar" onclick="voltar_conteudo2()">VOLTAR</button>
+                    <a asp-controller="Home" asp-action="Questionario">
+                        <button class="btn-avancar" id="butAvan" onclick="concluir_conteudo()">CONCLUIR</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Editor de código -->
+        <div class="editor__wrapper">
+            <p class="text">EDITOR</p>
+            <div class="editor__body">
+                <div id="editorCode" class="editor__code"></div>
+            </div>
+            <div class="btns">
+                <button class="editor__btn editor__run">EXECUTAR</button>
+                <button class="editor__btn editor__reset">LIMPAR</button>
+            </div>
+            <div class="editor__footer">
+                <div class="editor__footer--left"></div>
+                <div class="editor__footer--right">
+                    <p class="text">SAÍDA</p>
+                    <div class="editor__console">
+                        <ul class="editor__console-logs"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Bibliotecas necessárias do Ace -->
+    <script src="~/js/ace-editor/src-min/ace.js"></script>
+    <script src="~/js/ace-editor/src-min/mode-javascript.js"></script>
+    <script src="~/js/ace-editor/src-min/ext-language_tools.js"></script>
+    <script src="~/js/aula_funcoes.js"></script>
+
+
+    <!-- Customização -->
+    <script src="~/js/editor.js"></script>
+    <script src="~/js/editor-console.js"></script>
+    <script src="~/js/but-ajuda.js"></script>
+
+</body>
+

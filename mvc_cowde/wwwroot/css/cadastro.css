@@ -1,0 +1,115 @@
+﻿/* Fontes importadas */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+
+/* Logo */
+.logo_cowde {
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    margin: auto auto;
+    justify-content: center;
+    position: relative;
+    margin-bottom: -3rem;
+    margin-top: -2rem;
+}
+
+/* Cadastro */
+body {
+    position: fixed;
+}
+
+.forms {
+    display: grid;
+    justify-content: center;
+    gap: 6px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    /*gap: 35px;*/
+}
+
+.input_label {
+    color: white;
+    transition: (all 0.3s);
+    font-family: 'Press Start 2P', cursive;
+    padding-bottom: .8rem;
+}
+
+.input_field {
+    background-color: transparent;
+    border: 0.5px solid rgb(255, 255, 255);
+    line-height: 32px;
+    width: 50vh;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    padding-left: 10px;
+}
+
+
+
+/* Botão e link para login */
+.but_cadastro {
+    line-height: 35px;
+    margin-top: 25px;
+    position: relative;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #FFDD17;
+    color: #06002E;
+    border: none;
+}
+
+    .but_cadastro:hover {
+        background-color: #e2c103;
+        scale: 1.01;
+    }
+
+.link_login {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+}
+
+.link {
+    color: #E12F88;
+}
+
+    .link:hover {
+        color: #FFDD17;
+    }
+
+/* Posição geral dos elementos */
+
+
+/* Responsividade p/ celular*/
+@media only screen and (max-width: 600px) {
+    .logo_cowde {
+        width: 200px;
+        display: flex;
+        flex-direction: row;
+        margin: auto auto;
+        justify-content: center;
+        position: relative;
+    }
+
+    .input_field {
+        width: 35vh;
+    }
+
+    .link_login {
+        font-size: 9px;
+        line-height: 14px;
+    }
+
+    .input_label {
+        line-height: 20px;
+        font-size: 14px;
+    }
+}
